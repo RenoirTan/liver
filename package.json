@@ -1,0 +1,21 @@
+{
+    "name": "liver",
+    "displayName": "liver",
+    "description": "A theme which uses colours almost exclusively between lilac and vermillion.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.56.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "liver",
+                "uiTheme": "vs-dark",
+                "path": "./themes/liver-color-theme.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "beige": "#ffb370", // beige
+    "orange": "#ff7f00", // orange
+    "vermillion": "#ff6448", // vermillion
+    "red": "#ff1a1a", // red
+    "french-fuchsia": "#fd3f92", // french-fuchsia
+    "orchid": "#ff54f9", // orchid
+    "violet": "#d045ff", // violet
+    "lilac": "#ffadfc", // lilac
+    "lavender": "#cb94f2", // lavender
+    "blue-violet": "#9745ff", // blue-violet
+    "cyan": "#00edff", // cyan
+    "mint-green": "#53f2a2", // mint-green
+    "white": "#eeeeee", // white
+    "silver": "#d7d7d7", // silver
+    "gray": "#4e4e4e", // gray
+    "black": "#1a1a1a", // black
+    "calm-black": "#1f1f24", // calm-black
+    "calm-gray": "#2b2b36", // calm-gray
+    "neutral": "#797979", // neutral
+    "__linter-calmer": null
+}
