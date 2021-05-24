@@ -53,6 +53,14 @@
 		"editorRuler.foreground": "#fd3f9239", // french-fuchsia
 		"focusBorder": "#ffadfcb9", // lilac
 		"foreground": "#eeeeee", // white
+		"gitDecoration.addedResourceForeground": "#00edffb9", // cyan
+		"gitDecoration.conflictingResourceForeground": "#ff1a1ae9", // red
+		"gitDecoration.stageDeletedResourceForeground": "#ff644899", // vermillion
+		"gitDecoration.ignoredResourceForeground": "#d7d7d759", // silver
+		"gitDecoration.modifiedResourceForeground": "#ffadfcb9", // lilac
+		"gitDecoration.stageModifiedResourceForeground": "#ffadfc99", // lilac
+		"gitDecoration.renamedResourceForeground": "#fd3f92b9", // french-fuchsia
+		"gitDecoration.untrackedResourceForeground": "#53f2a2b9", // mint-green
 		"icon.foreground": "#eeeeee", // white,
 		"input.background": "#4e4e4e59", // gray,
 		"input.border": "#ffadfc79", // lilac
@@ -64,6 +72,7 @@
 		"listFilterWidget.background": "#4e4e4e79", // gray
 		"listFilterWidget.outline": "#ffadfc", // lilac
 		"listFilterWidget.noMatchesOutline": "#ff1a1a", // red
+		"list.deemphasizedForeground": "#4e4e4e", // gray"
 		"list.focusBackground": "#ffadfc39", // lilac
 		"list.focusOutline": "#ffadfc39", // lilac
 		"list.hoverBackground": "#ffadfc09", // lilac
