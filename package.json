@@ -3,6 +3,11 @@
     "displayName": "liver",
     "description": "A theme which uses colours almost exclusively between lilac and vermillion.",
     "version": "0.1.0",
+    "license": "MIT",
+    "author": {
+        "name": "RenoirTan"
+    },
+    "publisher": "renoirtan",
     "engines": {
         "vscode": "^1.56.0"
     },
