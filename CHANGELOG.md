@@ -1,9 +1,21 @@
-# Change Log
+# LiVer v0.1.0 Changelog
 
-All notable changes to the "liver" extension will be documented in this file.
+## Version 0.0.x
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+Original version.
 
-## [Unreleased]
+## Version 0.1.0
 
-- Initial release
+Decrease the saturation of:
+
+1. violet,
+2. lilac,
+3. lavender,
+4. blue-violet,
+5. cyan,
+6. mint-green
+
+In addition, `neutral`'s hex color value has been changed from `#797979` to
+`#7f7f7f` after I realised that 0xFF / 2 is 0x7F and not 0x79.
+
+White has been darkened from `#eeeeee` to `#e3e3e3`.
