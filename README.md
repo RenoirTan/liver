@@ -1,13 +1,40 @@
-# README
-## This is the README for your extension "liver"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# LiVer v0.1.0
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+This is a VSCode theme which uses colours mainly between lilac and vermillion.
+It also tries to limit the use of bold and italic font styles to markup files
+such as markdown. If you would like to disable font styles, you can add
+these configurations to your `settings.json`.
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+```json
+"editor.tokenColorCustomizations": {
+    "textMateRules": [
+        {
+            "name": "Disable Font Styles",
+            "scope": [
+                "variable.other.constant",
+                "variable.language",
+                "constant.language",
+                "constant.other.caps.python",
+                "markup.bold",
+                "markup.bold string",
+                "markup.bold markup.italic",
+                "markup.italic markup.bold",
+                "markup.quote markup.bold",
+                "markup.bold markup.italic string",
+                "markup.italic markup.bold string",
+                "markup.quote markup.bold string",
 
-**Enjoy!**
+                "comment",
+                "punctuation.definition.comment",
+                "text.html.basic entity.other.attribute-name.html",
+                "text.html.basic entity.other.attribute-name",
+                "markup.italic",
+                "markup.quote",
+            ],
+            "settings": {
+                "fontStyle": "normal"
+            }
+        }
+    ]
+}
+```
