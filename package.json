@@ -2,7 +2,7 @@
     "name": "liver",
     "displayName": "liver",
     "description": "A theme which uses colours almost exclusively between lilac and vermillion.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "engines": {
         "vscode": "^1.56.0"
     },

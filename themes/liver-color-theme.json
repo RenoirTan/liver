@@ -3,15 +3,15 @@
 	"type": "dark",
 	"colors": {
 		"activityBar.background": "#1f1f24", // calm-black
-		"activityBar.foreground": "#ff54f9b9",  // orchid
+		"activityBar.foreground": "#cb94f2", // lavender
 		"activityBar.inactiveForeground": "#4e4e4e", // gray
 		"activityBarBadge.background": "#ff1a1a", // red
 		"activityBarBadge.foreground": "#1a1a1a", // black
 		"breadcrumb.focusForeground": "#ffadfc", // lilac
 		"breadcrumb.activeSelectionForeground": "#ffadfc", // lilac
-		"button.background": "#ff6448b9", // vermillion
-		"button.hoverBackground": "#ff644879", // vermillion
-		"button.foreground": "#eeeeee", // white
+		"button.background": "#2b2b36", // calm-gray
+		"button.foreground": "#cb94f2", // lavender
+		"button.hoverBackground": "#1f1f24", // calm-black
 		"checkbox.background": "#4e4e4e", // gray
 		"checkbox.foreground": "#ffadfc", // lilac
 		"descriptionForeground": "#d7d7d7", // silver
@@ -108,12 +108,12 @@
 		"sideBar.foreground": "#d7d7d799", // silver
 		"sideBarSectionHeader.background": "#4e4e4e39", // gray
 		"sideBarSectionHeader.foreground": "#d7d7d7b9", // silver
-		"sideBarSectionHeader.border": "#eeeeee29", // white
 		"sideBarTitle.foreground": "#d7d7d7", // silver
 		"statusBar.background": "#9745ff99", // blue-violet
 		"statusBar.debuggingBackground": "#53f2a299", // mint-green
 		"statusBar.noFolderBackground": "#9745ff99", // blue-violet
 		"statusBarItem.remoteBackground": "#d045ff99", // violet
+		"statusBarItem.remoteForeground": "#eeeeee", // white
 		"tab.activeBackground": "#1f1f24", // calm-black
 		"tab.activeBorderTop": "#fd3f92", // french-fuchsia
 		"tab.unfocusedActiveBackground": "#1f1f24", // calm-black
@@ -124,7 +124,8 @@
 		"titleBar.activeBackground": "#2b2b36", // calm-gray
 		"titleBar.inactiveBackground": "#1f1f24", // calm-black
 		"toolbar.hoverBackground": "#d7d7d759", // silver
-		"tree.indentGuidesStroke": "#fd3f92b9", // french-fuchsia
+		"tree.indentGuidesStroke": "#ffadfcb9", // lilac
+		"walkThrough.embeddedEditorBackground": "#1f1f24", // calm-black
 		"welcomePage.progress.background": "#2b2b36", // calm-gray
 		"welcomePage.progress.foreground": "#cb94f2", // lavender
 		"welcomePage.tileBackground": "#1f1f24", // calm-black
@@ -146,7 +147,6 @@
 			"name": "Variables",
 			"scope": [
 				"variable",
-				"string constant.other.placeholder",
 				"meta.block variable.other",
 				"support.variable.property.js"
 			],
@@ -167,12 +167,31 @@
 			}
 		},
 		{
+			"name": "Constant Variables",
+			"scope": [
+				"constant.other.caps.python"
+			],
+			"settings": {
+				"foreground": "#ff7f00", // orange
+				"fontStyle": "bold"
+			}
+		},
+		{
 			"name": "Ruby Variables",
 			"scope": [
 				"variable.other.ruby"
 			],
 			"settings": {
 				"foreground": "#ffadfc", // lilac
+			}
+		},
+		{
+			"name": "Inline Expression",
+			"scope": [
+				"constant.character.format.placeholder.other.python"
+			],
+			"settings": {
+				"foreground": "#d045ff", // violet
 			}
 		},
 		{
@@ -195,9 +214,18 @@
 			}
 		},
 		{
-			"name": "Keyword, Storage",
+			"name": "Keyword",
 			"scope": [
 				"keyword",
+				"keyword.other"
+			],
+			"settings": {
+				"foreground": "#9745ff", // blue-violet
+			}
+		},
+		{
+			"name": "Storage",
+			"scope": [
 				"storage.type",
 				"storage.modifier"
 			],
@@ -208,7 +236,6 @@
 		{
 			"name": "Operator",
 			"scope": [
-				"keyword.control",
 				"keyword.operator",
 				"keyword.other.template",
 				"keyword.other.substitution",
@@ -216,7 +243,7 @@
 				"source.js constant.other.object.key.js string.unquoted.label.js"
 			],
 			"settings": {
-				"foreground": "#d045ff", // violet
+				"foreground": "#fd3f92", // french-fuchsia
 			}
 		},
 		{
@@ -230,7 +257,11 @@
 		},
 		{
 			"name": "Punctuation",
-			"scope": ["punctuation"],
+			"scope": [
+				"source.python punctuation",
+				"punctuation.separator",
+				"punctuation.section"
+			],
 			"settings": {
 				"foreground": "#d7d7d7", // silver
 			}
@@ -265,7 +296,7 @@
 				"entity.name.method.js"
 			],
 			"settings": {
-				"foreground": "#cb94f2" // lavender
+				"foreground": "#cb94f2", // lavender
 			}
 		},
 		{
@@ -293,37 +324,38 @@
 		{
 			"name": "Escape Character",
 			"scope": [
-				"constant.character.escape"
+				"constant.character.escape",
+				"constant.other.placeholder"
 			],
 			"settings": {
-				"foreground": "#9745ff" // blue-violet
+				"foreground": "#00edff", // cyan
 			}
 		},
 		{
 			"name": "Numbers",
 			"scope": [
-				"constant.numeric"
+				"constant.numeric",
+				"keyword.other.unit"
 			],
 			"settings": {
 				"foreground": "#cb94f2" // lilac
 			}
 		},
 		{
-			"name": "Parameter",
+			"name": "Parameter, Argument",
 			"scope": [
-				"variable.parameter"
+				"variable.parameter",
+				"meta.function-call.arguments"
 			],
 			"settings": {
-				"foreground": "#ff6448" // vermillion
+				"foreground": "#eeeeee", // white
 			}
 		},
 		{
 			"name": "Constant Literal",
 			"scope": [
 				"support.constant",
-				"constant.escape",
-				"keyword.other.unit",
-				"keyword.other"
+				"constant.escape"
 			],
 			"settings": {
 				"foreground": "#00edff" // cyan
@@ -352,19 +384,11 @@
 				"support.other.namespace.use.php",
 				"meta.use.php",
 				"support.other.namespace.php",
-				"markup.changed.git_gutter"
+				"markup.changed.git_gutter",
+				"meta.type meta.brace"
 			],
 			"settings": {
-				"foreground": "#cb94f2" // lavender
-			}
-		},
-		{
-			"name": "Integral Types",
-			"scope": [
-				"support.type"
-			],
-			"settings": {
-				"foreground": "#ff7f00" // orange
+				"foreground": "#ffadfc", // lilac
 			}
 		},
 		{
@@ -393,10 +417,11 @@
 			}
 		},
 		{
-			"name": "JSON Key",
+			"name": "Configuration File Key",
 			"scope": [
 				"source.json meta.structure.dictionary.json support.type.property-name.json",
 				"punctuation.support.type.property-name",
+				"source.toml entity.name.tag"
 			],
 			"settings": {
 				"foreground": "#fd3f92" // french-fuchsia
@@ -447,15 +472,6 @@
 			],
 			"settings": {
 				"foreground": "#cb94f2" // lavender
-			}
-		},
-		{
-			"name": "Escape Characters",
-			"scope": [
-				"constant.character.escape"
-			],
-			"settings": {
-				"foreground": "#00edff" // cyan
 			}
 		},
 		{
