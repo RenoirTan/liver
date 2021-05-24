@@ -6,8 +6,22 @@
     "engines": {
         "vscode": "^1.56.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RenoirTan/liver"
+    },
+    "bugs": {
+        "url": "https://github.com/RenoirTan/liver/issues"
+    },
     "categories": [
         "Themes"
+    ],
+    "keywords": [
+        "dark",
+        "purple",
+        "red",
+        "violet",
+        "liver"
     ],
     "contributes": {
         "themes": [
