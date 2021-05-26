@@ -1,4 +1,4 @@
-# LiVer v0.1.0
+# LiVer v0.1.1
 
 This is a VSCode theme which uses colours mainly between lilac and vermillion.
 It also tries to limit the use of bold and italic font styles to markup files
