@@ -161,6 +161,8 @@
 				"variable.other.constant",
 				"variable.language",
 				"constant.language",
+				"support.variable.magic",
+				"variable.legacy.builtin"
 			],
 			"settings": {
 				"foreground": "#ff7f00",
@@ -221,13 +223,7 @@
 			"name": "Keyword",
 			"scope": [
 				"keyword",
-				"keyword.other",
-				"keyword.operator.new",
-				"keyword.operator.delete",
-				"keyword.operator.expression",
-				"keyword.operator.arrow",
-				"keyword.operator.dereference",
-				"keyword.operator.unpacking"
+				"keyword.other"
 			],
 			"settings": {
 				"foreground": "#9554e8",
@@ -257,9 +253,25 @@
 			}
 		},
 		{
+			"name": "Keyword Operator, Operator 2",
+			"scope": [
+				"keyword.operator.new",
+				"keyword.operator.delete",
+				"keyword.operator.expression",
+				"keyword.operator.logical",
+				"keyword.operator.arrow",
+				"keyword.operator.dereference",
+				"keyword.operator.unpacking"
+			],
+			"settings": {
+				"foreground": "#9554e8"
+			}
+		},
+		{
 			"name": "Trivial Operator",
 			"scope": [
-				"keyword.operator.type"
+				"keyword.operator.type",
+				"keyword.operator.range"
 			],
 			"settings": {
 				"foreground": "#d7d7d7",

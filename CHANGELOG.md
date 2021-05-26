@@ -1,4 +1,4 @@
-# LiVer v0.1.0 Changelog
+# LiVer v0.1.2 Changelog
 
 ## Version 0.0.x
 
@@ -61,3 +61,11 @@ I have set for Python.
 Also, I somehow managed to forget TOML and the bois exist and had to change
 the colours of their table names. This called for a new set under `tokenColors`
 called "Ini Table".
+
+## Version 0.1.2
+
+1. Moved keyword operators from "Keyword" to "Keyword Operator, Operator 2".
+2. Add `keyword.operator.range` (like Ruby ```..```) to "Trivial Operator".
+3. Add `variable.legacy.builtin` to "Builtin Variables". This means legacy
+builtins like Python's `functools.reduce` get a special orange colour to
+showcase their old age.
