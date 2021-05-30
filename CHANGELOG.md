@@ -1,4 +1,4 @@
-# LiVer v0.1.2 Changelog
+# LiVer v0.1.3 Changelog
 
 ## Version 0.0.x
 
@@ -69,3 +69,9 @@ called "Ini Table".
 3. Add `variable.legacy.builtin` to "Builtin Variables". This means legacy
 builtins like Python's `functools.reduce` get a special orange colour to
 showcase their old age.
+
+## Version 0.1.3
+
+Add preview screenshots to README.md. I didn't want to increment the
+patch number but `vsce` said I could not publish liver with the same
+semver and twisted my arm into doing it.

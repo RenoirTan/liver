@@ -1,4 +1,4 @@
-# LiVer v0.1.2
+# LiVer v0.1.3
 
 *[Github Repo](https://github.com/RenoirTan/liver)*
 
