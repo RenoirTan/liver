@@ -1,0 +1,11 @@
+body {
+    color: blue;
+}
+
+.buttons {
+    background-color: red;
+}
+
+#search-bar {
+    font-weight: 500;
+}
