@@ -1,0 +1,30 @@
+{
+    "key": "value",
+    "number": 420,
+    "none": null,
+    "boolean": true,
+    "array": [
+        "stuff"
+    ],
+    "object": {
+        "key": "value",
+        "number": 420,
+        "none": null,
+        "boolean": true,
+        "array": [
+            "stuff"
+        ],
+        "object": {
+            "key": "value",
+            "number": 420,
+            "none": null,
+            "boolean": true,
+            "array": [
+                "stuff"
+            ],
+            "object": {
+                
+            }
+        }
+    }
+}
