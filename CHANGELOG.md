@@ -1,4 +1,4 @@
-# LiVer v0.1.3 Changelog
+# LiVer v0.1.4 Changelog
 
 ## Version 0.0.x
 
@@ -75,3 +75,22 @@ showcase their old age.
 Add preview screenshots to README.md. I didn't want to increment the
 patch number but `vsce` said I could not publish liver with the same
 semver and twisted my arm into doing it.
+
+## Version 0.1.4
+
+Add imported objects to "Types, Class, Support" and rename it to
+"Types, Class, Support, Imports". This fixes the bug where imports
+in Java are blue-violet but should instead be lilac like all class
+names.
+
+Set "source.toml punctuation.definition.table.toml" to "Punctuation"
+so that it doesn't appear purple.
+
+Explicitly include "constant.other.boolean" to "Builtin Variables".
+
+Add "constant.other.date" and "constant.other.datetime" to "Numbers"
+so they are rendered like numbers in languages like TOML.
+
+Add TOML to screenshots folder.
+
+Add "punctuation.definition.metadata" to "Markdown Delimiter".
