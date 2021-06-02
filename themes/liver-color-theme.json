@@ -162,7 +162,8 @@
                 "variable.language",
                 "constant.language",
                 "support.variable.magic",
-                "variable.legacy.builtin"
+                "variable.legacy.builtin",
+                "constant.other.boolean"
             ],
             "settings": {
                 "foreground": "#ff7f00",
@@ -288,7 +289,8 @@
                 "keyword.operator.assignment",
                 "source.rust keyword.operator.key-value",
                 "keyword.operator.namespace",
-                "keyword.operator.access"
+                "keyword.operator.access",
+                "source.toml punctuation.definition.table.inline",
             ],
             "settings": {
                 "foreground": "#d7d7d7",
@@ -364,7 +366,9 @@
             "name": "Numbers",
             "scope": [
                 "constant.numeric",
-                "keyword.other.unit"
+                "keyword.other.unit",
+                "constant.other.datetime",
+                "constant.other.date"
             ],
             "settings": {
                 "foreground": "#c390e8"
@@ -404,7 +408,7 @@
             }
         },
         {
-            "name": "Types, Class, Support",
+            "name": "Types, Class, Support, Imports",
             "scope": [
                 "entity.name",
                 "entity.other.inherited-class",
@@ -414,7 +418,8 @@
                 "meta.use.php",
                 "support.other.namespace.php",
                 "markup.changed.git_gutter",
-                "meta.type meta.brace"
+                "meta.type meta.brace",
+                "storage.modifier.import"
             ],
             "settings": {
                 "foreground": "#eba2e8",
@@ -728,7 +733,8 @@
             "name": "Markdown Delimiter",
             "scope": [
                 "punctuation.definition.string.begin.markdown",
-                "punctuation.definition.string.end.markdown"
+                "punctuation.definition.string.end.markdown",
+                "punctuation.definition.metadata"
             ],
             "settings": {
                 "foreground": "#e3e3e3",
