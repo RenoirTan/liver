@@ -1,4 +1,4 @@
-# LiVer v0.1.4 Changelog
+# LiVer v0.1.5 Changelog
 
 ## Version 0.0.x
 
@@ -94,3 +94,8 @@ so they are rendered like numbers in languages like TOML.
 Add TOML to screenshots folder.
 
 Add "punctuation.definition.metadata" to "Markdown Delimiter".
+
+## Version 0.1.5
+
+Remove sample code from tracking because with them Github mistakenly
+counts them as part of the repo.
