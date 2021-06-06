@@ -166,26 +166,18 @@
                 "constant.other.boolean"
             ],
             "settings": {
-                "foreground": "#ff7f00",
+                "foreground": "#ff1a1a",
             }
         },
         {
             "name": "Constant Variables",
             "scope": [
-                "constant.other.caps.python"
+                "constant.other.caps.python",
+                "support.constant",
             ],
             "settings": {
-                "foreground": "#ff7f00",
+                "foreground": "#ff1a1a",
                 "fontStyle": "bold"
-            }
-        },
-        {
-            "name": "Ruby Variables",
-            "scope": [
-                "variable.other.ruby"
-            ],
-            "settings": {
-                "foreground": "#eba2e8",
             }
         },
         {
@@ -246,11 +238,15 @@
                 "keyword.operator",
                 "keyword.other.template",
                 "keyword.other.substitution",
+                "keyword.operator.assignment",
+                "keyword.operator.type",
+                "keyword.operator.range",
+                "storage.type.function.arrow",
                 "meta.tag",
                 "source.js constant.other.object.key.js string.unquoted.label.js"
             ],
             "settings": {
-                "foreground": "#fd3f92",
+                "foreground": "#ff1a1a",
             }
         },
         {
@@ -260,22 +256,11 @@
                 "keyword.operator.delete",
                 "keyword.operator.expression",
                 "keyword.operator.logical",
-                "keyword.operator.arrow",
                 "keyword.operator.dereference",
                 "keyword.operator.unpacking"
             ],
             "settings": {
                 "foreground": "#9554e8"
-            }
-        },
-        {
-            "name": "Trivial Operator",
-            "scope": [
-                "keyword.operator.type",
-                "keyword.operator.range"
-            ],
-            "settings": {
-                "foreground": "#d7d7d7",
             }
         },
         {
@@ -286,7 +271,6 @@
                 "punctuation.section",
                 "punctuation.accessor",
                 "string.template meta.template.expression",
-                "keyword.operator.assignment",
                 "source.rust keyword.operator.key-value",
                 "keyword.operator.namespace",
                 "keyword.operator.access",
@@ -324,7 +308,8 @@
                 "variable.import.parameter.js",
                 "variable.other.class.js",
                 "entity.name.method.js",
-                "source.python punctuation.separator.annotation.result"
+                "source.python punctuation.separator.annotation.result",
+                "source.rust keyword.operator.arrow.skinny"
             ],
             "settings": {
                 "foreground": "#c390e8",
@@ -387,7 +372,6 @@
         {
             "name": "Constant Literal",
             "scope": [
-                "support.constant",
                 "constant.escape"
             ],
             "settings": {
@@ -422,7 +406,7 @@
                 "storage.modifier.import"
             ],
             "settings": {
-                "foreground": "#eba2e8",
+                "foreground": "#c390e8",
             }
         },
         {
