@@ -1,4 +1,4 @@
-# LiVer v0.1.4 Changelog
+# LiVer v0.1.5 Changelog
 
 ## Version 0.0.x
 
@@ -94,3 +94,22 @@ so they are rendered like numbers in languages like TOML.
 Add TOML to screenshots folder.
 
 Add "punctuation.definition.metadata" to "Markdown Delimiter".
+
+## Version 0.1.5
+
+Remove sample code from tracking because with them Github mistakenly
+counts them as part of the repo.
+
+Change the colour of constants and builtins from orange to red.
+
+Merge Operator 1 and Trivial Operators and remove
+keyword.operator.assignment from "Punctuation".
+
+Change the colour of operators to red.
+
+Classes and types are now lavender, like functions.
+
+Ruby variables are now silver like in other languages because they don't
+deserve to be special.
+
+Arrows for return values are now grouped under "Function, Method".
