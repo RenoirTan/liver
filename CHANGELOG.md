@@ -1,4 +1,4 @@
-# LiVer v0.1.5 Changelog
+# LiVer v0.2.0 Changelog
 
 ## Version 0.0.x
 
@@ -113,3 +113,8 @@ Ruby variables are now silver like in other languages because they don't
 deserve to be special.
 
 Arrows for return values are now grouped under "Function, Method".
+
+
+## Version 0.2.0
+
+Rename `neutral` to `centrist`.
