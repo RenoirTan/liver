@@ -40,7 +40,9 @@ def check_hex_color(string: str) -> int:
     """
     Check whether a string represents a valid hex colour.
     """
-    if HEX6.match(string):
+    if type(string) != str:
+        return 0
+    elif HEX6.match(string):
         return 1
     elif HEX8.match(string):
         return 2
