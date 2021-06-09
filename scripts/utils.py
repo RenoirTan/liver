@@ -24,6 +24,18 @@ def option_string(string: str) -> Optional[str]:
     return None if is_string_blank(string) else string
 
 
+def hex_byte_str(value: int) -> str:
+    """
+    Convert a "char" to a hexadecimal number.
+    """
+    if not (0 <= value <= 0xFF):
+        raise ValueError(f"value must be between 0 and 255: {value}")
+    hex_value = hex(value)[2:]
+    if value < 0x10:
+        hex_value = "0" + hex_value
+    return hex_value
+
+
 def check_hex_color(string: str) -> int:
     """
     Check whether a string represents a valid hex colour.
@@ -63,7 +75,23 @@ def color_16_to_256(string: str) -> str:
             elif digit > 0: # i.e. byte_digit >= 0x11 (2 digits)
                 byte_hex += byte_digit
         return byte_hex
-        
+
+
+def set_opacity(string: str, opacity: int) -> str:
+    """
+    Set the opacity of a hex color string.
+
+    This function raises ValueError if the hex color string only has 3 or
+    4 digits because it can't tell whether to multiply opacity by 0x11.
+    """
+    hex_type = check_hex_color(string)
+    if hex_type not in (1, 2):
+        raise ValueError(f"Incompatible hex string: {string}")
+    hex_opacity = hex_byte_str(opacity)
+    if hex_type == 1:
+        return string + hex_opacity
+    else:
+        return string[:-2] + hex_opacity
 
 
 def list_get(array: List[Any], index: int, default: Any = None) -> Any:

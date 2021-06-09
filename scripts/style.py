@@ -63,8 +63,10 @@ class Style(object):
                 if tentative is None:
                     raise ValueError(f"Could not find color: {color}")
             color = tentative
+        # Convert 3/4 digit to 6/8 digit
+        color = utils.color_16_to_256(color)
         if self.opacity is not None:
-            color += hex(self.opacity)[2:]
+            color = utils.set_opacity(color, self.opacity)
         return color
     
     def get_style(self) -> Optional[str]:
