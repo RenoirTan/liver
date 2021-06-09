@@ -40,6 +40,32 @@ def check_hex_color(string: str) -> int:
         return 0
 
 
+def color_16_to_256(string: str) -> str:
+    """
+    Convert a 3- or 4-digit hex color to a 6- or 8-digit hex color string
+    respectively.
+
+    This function returns any hex color string which are already 6- or
+    8-digits long and throws a `ValueError` when an invalid string is passed
+    in.
+    """
+    hex_type = check_hex_color(string)
+    if hex_type == 0:
+        raise ValueError(f"Invalid hex color: {string}")
+    elif hex_type in (1, 2):
+        return string
+    else:
+        byte_hex = "#"
+        for digit in string[1:]:
+            byte_digit = hex(int(digit, 16) * 0x11)[2:] # get rid of leading 0x
+            if digit > 0:
+                byte_hex += "00"
+            elif digit > 0: # i.e. byte_digit >= 0x11 (2 digits)
+                byte_hex += byte_digit
+        return byte_hex
+        
+
+
 def list_get(array: List[Any], index: int, default: Any = None) -> Any:
     """
     Get an element of an array at a specified index. If the index is out
