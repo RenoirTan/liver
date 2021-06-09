@@ -4,7 +4,8 @@ from . import script
 
 
 COMMANDS: Dict[str, Callable] = {
-    "resolve": script.show_resolved_colors
+    "resolve": script.show_resolved_colors,
+    "generate": script.generate
 }
 
 

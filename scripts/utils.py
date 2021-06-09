@@ -9,19 +9,21 @@ HEX3 = re.compile("^#[0-9a-f]{3}$", flags=re.IGNORECASE)
 HEX4 = re.compile("^#[0-9a-f]{4}$", flags=re.IGNORECASE)
 
 
-def is_string_blank(string: str) -> bool:
+def is_string_blank(string: Optional[str]) -> bool:
     """
     Check to see if a string is empty or only has whitespace.
     """
+    if string is None:
+        return True
     return STRING_EMPTY.match(string) is not None
 
 
-def option_string(string: str) -> Optional[str]:
+def option_string(string: Optional[str]) -> Optional[str]:
     """
     Convert an string to None if it's blank (i.e. only whitespace),
     otherwise return the original string.
     """
-    return None if is_string_blank(string) else string
+    return None if string is None or is_string_blank(string) else string
 
 
 def hex_byte_str(value: int) -> str:

@@ -100,7 +100,7 @@
         "input.border": "accent/79",
         "inputOption.activeBorder": "accent/79",
         "inputValidation.errorBackground": "background-gray/b9",
-        "inputValidation.errorBorder": "accentb9",
+        "inputValidation.errorBorder": "accent/b9",
         "list.activeSelectionBackground": "selection/39",
         "list.dropBackground": "selection-textbox/19",
         "listFilterWidget.background": "background-gray/79",
@@ -145,7 +145,7 @@
         "sideBarTitle.foreground": "foreground",
         "statusBar.background": "blue-violet/99",
         "statusBar.debuggingBackground": "good/99",
-        "statusBar.noFolderBackground": "blue-violet99",
+        "statusBar.noFolderBackground": "blue-violet/99",
         "statusBarItem.remoteBackground": "violet/99",
         "statusBarItem.remoteForeground": "foreground",
         "tab.activeBackground": "background",
@@ -649,9 +649,7 @@
                 "punctuation.definition.list.begin.markdown",
                 "punctuation.definition.list.end.markdown"
             ],
-            "settings": {
-                "foreground": "vermillion"
-            }
+            "settings": "vermillion"
         }
     ]
 }

@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 from typing import *
 from pprint import pprint
@@ -11,3 +12,14 @@ def show_resolved_colors(name: str) -> Dict[str, str]:
     resolved = generator.resolve_colors(template_colors, palette)
     pprint(resolved)
     return resolved
+
+
+def generate(name: str) -> Dict[str, Any]:
+    template = generator.get_template(name)
+    output = generator.generate(template)
+    pprint(output)
+    json.dump(
+        output,
+        Path(generator.THEMES_PATH / (output["name"] + ".json")).open("w")
+    )
+    return output

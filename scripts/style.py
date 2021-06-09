@@ -27,8 +27,10 @@ class Style(object):
             utils.list_get(components, 0)
         )
         opacity = utils.list_get(components, 1)
-        self.opacity: Optional[int] = None if opacity is None else int(opacity)
-        if not (0 <= self.opacity <= 0xFF):
+        self.opacity: Optional[int] = None if utils.is_string_blank(
+            opacity
+        ) else int(opacity, 16)
+        if self.opacity is not None and not (0 <= self.opacity <= 0xFF):
             raise ValueError(
                 f"opacity must be between 0 and 255: {self.opacity}"
             )
@@ -48,7 +50,7 @@ class Style(object):
             self.style = parent.style
 
     def get_color(
-        self, palette: Dict[str, str], generator_colors: Dict[str, str]
+        self, palette: Dict[str, str]
     ) -> Optional[str]:
         """
         Get the hex color value of this style.
@@ -57,11 +59,9 @@ class Style(object):
             return None
         color = self.color
         while utils.check_hex_color(color) == 0:
-            tentative = generator_colors.get(color, None)
+            tentative = palette.get(color, None)
             if tentative is None:
-                tentative = palette.get(color, None)
-                if tentative is None:
-                    raise ValueError(f"Could not find color: {color}")
+                raise ValueError(f"Could not find color: {color}")
             color = tentative
         # Convert 3/4 digit to 6/8 digit
         color = utils.color_16_to_256(color)
@@ -79,7 +79,7 @@ class Style(object):
         if "i" in self.style:
             style.append("italic")
         if "b" in self.style:
-            self.append("bold")
+            style.append("bold")
         if "u" in self.style:
-            self.append("underline")
+            style.append("underline")
         return " ".join(style)
