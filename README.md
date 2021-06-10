@@ -1,45 +1,21 @@
 # LiVer v0.2.0
 
-*[Github Repo](https://github.com/RenoirTan/liver)*
+[Github Repo](https://github.com/RenoirTan/liver)
 
 This is a VSCode theme which uses colours mainly between lilac and vermillion.
 It also tries to limit the use of bold and italic font styles to markup files
-such as markdown. If you would like to disable font styles, you can add
-these configurations to your `settings.json`.
+such as markdown.
 
-```json
-"editor.tokenColorCustomizations": {
-    "textMateRules": [
-        {
-            "name": "Disable Font Styles",
-            "scope": [
-                "variable.other.constant",
-                "variable.language",
-                "constant.language",
-                "constant.other.caps.python",
-                "markup.bold",
-                "markup.bold string",
-                "markup.bold markup.italic",
-                "markup.italic markup.bold",
-                "markup.quote markup.bold",
-                "markup.bold markup.italic string",
-                "markup.italic markup.bold string",
-                "markup.quote markup.bold string",
+## Liver Dark vs Liver Dark Full
 
-                "comment",
-                "punctuation.definition.comment",
-                "text.html.basic entity.other.attribute-name.html",
-                "text.html.basic entity.other.attribute-name",
-                "markup.italic",
-                "markup.quote",
-            ],
-            "settings": {
-                "fontStyle": "normal"
-            }
-        }
-    ]
-}
-```
+Liver Dark Full is technically the original theme (in the sense that it's closer
+to liver in v0.1.x). It adds font styles for certain elements such as
+links, bold and italicised fonts for text in Markdown, as well as bold text for
+constant variables.
+In Liver Dark, all text (at least in the editor) do not have font styles,
+except for links, which VSCode enthusiastically underlines for you even though
+I didn't specify it to underline links. However, both themes look quite similar
+side-by-side.
 
 ## Screenshots
 
