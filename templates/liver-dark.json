@@ -29,9 +29,6 @@
             "key": "french-fuchsia",
             "operator": "red",
             "punctuation": "foreground"
-        },
-        "styles": {
-            "link-active": "accent//u"
         }
     },
     "colors": {
@@ -565,7 +562,8 @@
         {
             "name": "Markdown Link",
             "scope": [
-                "string.other.link.title.markdown"
+                "string.other.link",
+                "markup.underline.link"
             ],
             "settings": "link"
         },

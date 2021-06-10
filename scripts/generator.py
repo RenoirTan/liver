@@ -115,17 +115,13 @@ def inherit_from_parents(template: Dict[str, Any]) -> Dict[str, Any]:
     if len(parents) == 0:
         return template
     generator_colors: Dict[str, str] = {}
-    generator_styles: Dict[str, str] = {}
     colors: Dict[str, str] = {}
     token_colors: List[TokenColor] = []
 
     def _add_template(_template: Dict[str, Any]):
-        nonlocal generator_colors, generator_styles, colors, token_colors
+        nonlocal generator_colors, colors, token_colors
         combine_dicts_with_overwrite(
             generator_colors, _template["generator"].get("colors", {})
-        )
-        combine_dicts_with_overwrite(
-            generator_styles, _template["generator"].get("styles", {})
         )
         combine_dicts_with_overwrite(colors, _template["colors"])
         for group in _template["tokenColors"]:
@@ -138,7 +134,6 @@ def inherit_from_parents(template: Dict[str, Any]) -> Dict[str, Any]:
         _add_template(parent)
     _add_template(template)
     template["generator"]["colors"] = generator_colors
-    template["generator"]["styles"] = generator_styles
     template["colors"] = colors
     for index, token_color in enumerate(token_colors):
         token_colors[index] = token_color.to_dict()
