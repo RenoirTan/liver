@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 from typing import *
 import pprint
+from .info import *
 from .style import Style
 from .token_color import TokenColor
 from . import utils
@@ -9,12 +10,6 @@ from . import utils
 
 T = TypeVar("T")
 H = TypeVar("H", bound=Hashable)
-
-
-ROOT_PATH = Path(__file__).parents[1].resolve()
-PALETTES_PATH = ROOT_PATH / "palettes"
-TEMPLATES_PATH = ROOT_PATH / "templates"
-THEMES_PATH = ROOT_PATH / "themes"
 
 
 def get_palette(name: str) -> Dict[str, str]:
