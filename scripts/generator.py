@@ -98,7 +98,6 @@ def generate(template: Dict[str, Any]) -> Dict[str, Any]:
         output["colors"][scope] = color
     for group in template["tokenColors"]:
         group = group.copy()
-        pprint.pprint(group)
         styling = style.Style(group["settings"])
         color = styling.get_color(colors)
         font_style = styling.get_style()

@@ -57,12 +57,9 @@ class Style(object):
         """
         if self.color is None:
             return None
-        color = self.color
-        while utils.check_hex_color(color) == 0:
-            tentative = palette.get(color, None)
-            if tentative is None:
-                raise ValueError(f"Could not find color: {color}")
-            color = tentative
+        color = palette.get(self.color, None)
+        if color is None:
+            raise ValueError(f"Could not find color named '{self.color}'")
         # Convert 3/4 digit to 6/8 digit
         color = utils.color_16_to_256(color)
         if self.opacity is not None:

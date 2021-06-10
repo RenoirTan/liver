@@ -14,12 +14,14 @@ def show_resolved_colors(name: str) -> Dict[str, str]:
     return resolved
 
 
-def generate(name: str) -> Dict[str, Any]:
-    template = generator.get_template(name)
-    output = generator.generate(template)
-    pprint(output)
-    json.dump(
-        output,
-        Path(generator.THEMES_PATH / (output["name"] + ".json")).open("w")
-    )
-    return output
+def generate(*names: str) -> int:
+    for name in names:
+        print(f"Generating: {name}...", end="")
+        template = generator.get_template(name)
+        output = generator.generate(template)
+        json.dump(
+            output,
+            Path(generator.THEMES_PATH / (name + ".json")).open("w")
+        )
+        print(" ✓")
+    return 0
