@@ -17,7 +17,7 @@
             "warning": "orange",
             "bad": "red",
             "accent": "lavender",
-            "link": "lilac",
+            "link": "accent",
             "link-active": "blue-violet",
             "toggle": "calm-gray",
             "selection": "lilac",
@@ -31,7 +31,7 @@
             "punctuation": "foreground"
         },
         "styles": {
-            "link-active": "lilac//u"
+            "link-active": "accent//u"
         }
     },
     "colors": {
