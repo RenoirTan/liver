@@ -2,8 +2,13 @@ import json
 from pathlib import Path
 from typing import *
 import pprint
-from . import style
+from .style import Style
+from .token_color import TokenColor
 from . import utils
+
+
+T = TypeVar("T")
+H = TypeVar("H", bound=Hashable)
 
 
 ROOT_PATH = Path(__file__).parents[1].resolve()
@@ -70,6 +75,34 @@ def has_parents(template: Dict[str, Any]) -> bool:
     return len(parents) > 0
 
 
+def combine_dicts_with_overwrite(first: Dict, second: Dict) -> Dict:
+    for k, v in second.items():
+        first[k] = v
+    return first
+
+
+def combine_sets(first: Set, second: Set) -> Set:
+    for item in second:
+        first.add(item)
+
+
+def list_find_hash(array: List[H], target: H) -> List[int]:
+    indices: List[int] = []
+    for index, element in enumerate(array):
+        if hash(element) == hash(target):
+            indices.append(index)
+    return indices
+
+
+def list_set_add(array: List[H], element: H) -> List[H]:
+    indices = list_find_hash(array, element)
+    if len(indices) > 0:
+        for offset, index in enumerate(indices):
+            array.pop(index - offset)
+    array.append(element)
+    return array
+
+
 def inherit_from_parents(template: Dict[str, Any]) -> Dict[str, Any]:
     """
     TODO: COMPLETE THIS FUNCTION
@@ -78,12 +111,39 @@ def inherit_from_parents(template: Dict[str, Any]) -> Dict[str, Any]:
     itself. This checks to see if the parent template has already been
     filled in by searching for {parent name}.i.json under templates/.
     """
-    return template
     parents = template["generator"].get("parents", [])
     if len(parents) == 0:
         return template
+    generator_colors: Dict[str, str] = {}
+    generator_styles: Dict[str, str] = {}
+    colors: Dict[str, str] = {}
+    token_colors: List[TokenColor] = []
+
+    def _add_template(_template: Dict[str, Any]):
+        nonlocal generator_colors, generator_styles, colors, token_colors
+        combine_dicts_with_overwrite(
+            generator_colors, _template["generator"].get("colors", {})
+        )
+        combine_dicts_with_overwrite(
+            generator_styles, _template["generator"].get("styles", {})
+        )
+        combine_dicts_with_overwrite(colors, _template["colors"])
+        for group in _template["tokenColors"]:
+            token_color = TokenColor(group)
+            list_set_add(token_colors, token_color)
+
     for parent_name in parents:
         parent = get_template(parent_name)
+        parent = inherit_from_parents(parent) # Recursion
+        _add_template(parent)
+    _add_template(template)
+    template["generator"]["colors"] = generator_colors
+    template["generator"]["styles"] = generator_styles
+    template["colors"] = colors
+    for index, token_color in enumerate(token_colors):
+        token_colors[index] = token_color.to_dict()
+    template["tokenColors"] = token_colors
+    return template
 
 
 def generate(template: Dict[str, Any]) -> Dict[str, Any]:
@@ -92,13 +152,13 @@ def generate(template: Dict[str, Any]) -> Dict[str, Any]:
     palette = get_palette(template["generator"]["palette"])
     colors = resolve_colors(template["generator"]["colors"], palette)
     for scope, value in template["colors"].items():
-        color = style.Style(value).get_color(colors)
+        color = Style(value).get_color(colors)
         if color == None:
             raise ValueError(f"Unknown color: {color}")
         output["colors"][scope] = color
     for group in template["tokenColors"]:
         group = group.copy()
-        styling = style.Style(group["settings"])
+        styling = Style(group["settings"])
         color = styling.get_color(colors)
         font_style = styling.get_style()
         settings = {}

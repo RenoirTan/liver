@@ -34,6 +34,16 @@
                 "label": "liver",
                 "uiTheme": "vs-dark",
                 "path": "./themes/liver-color-theme.json"
+            },
+            {
+                "label": "liver-dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/liver-dark.json"
+            },
+            {
+                "label": "liver-dark-full",
+                "uiTheme": "vs-dark",
+                "path": "./themes/liver-dark-full.json"
             }
         ]
     }
