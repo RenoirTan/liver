@@ -1,0 +1,87 @@
+{
+    "name": "Liver Dark Full",
+    "type": "dark",
+    "generator": {
+        "palette": "dark",
+        "parents": ["liver-dark"],
+        "colors": {},
+        "styles": {}
+    },
+    "colors": {},
+    "tokenColors": [
+        {
+            "name": "Comment",
+            "scope": [
+                "comment",
+                "punctuation.definition.comment"
+            ],
+            "settings": "centrist//i"
+        },
+        {
+            "name": "Constant Variables",
+            "scope": [
+                "constant.other.caps.python",
+                "support.constant"
+            ],
+            "settings": "static//b"
+        },
+        {
+            "name": "HTML Attributes",
+            "scope": [
+                "text.html.basic entity.other.attribute-name.html",
+                "text.html.basic entity.other.attribute-name"
+            ],
+            "settings": "orange//i"
+        },
+        {
+            "name": "Markup Italic",
+            "scope": [
+                "markup.italic"
+            ],
+            "settings": "lilac//i"
+        },
+        {
+            "name": "Markup Bold-Italic",
+            "scope": [
+                "markup.bold markup.italic",
+                "markup.italic markup.bold",
+                "markup.quote markup.bold",
+                "markup.bold markup.italic string",
+                "markup.italic markup.bold string",
+                "markup.quote markup.bold string"
+            ],
+            "settings": "lilac//ib"
+        },
+        {
+            "name": "Markup Quote",
+            "scope": [
+                "markup.quote"
+            ],
+            "settings": "//i"
+        },
+        {
+            "name": "Markup Bold",
+            "scope": [
+                "markup.bold",
+                "markup.bold string"
+            ],
+            "settings": "lilac//b"
+        },
+        {
+            "name": "URL",
+            "scope": [
+                "*url*",
+                "*link*",
+                "*uri*"
+            ],
+            "settings": "link//u"
+        },
+        {
+            "name": "Markup Underline",
+            "scope": [
+                "markup.underline"
+            ],
+            "settings": "lilac//u"
+        }
+    ]
+}

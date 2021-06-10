@@ -3,3 +3,5 @@ node_modules
 .vscode
 !.vscode/launch.json
 screenshots/
+__pycache__/
+*.i.json

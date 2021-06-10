@@ -1,4 +1,4 @@
-# LiVer v0.1.5 Changelog
+# LiVer v0.2.0 Changelog
 
 ## Version 0.0.x
 
@@ -113,3 +113,24 @@ Ruby variables are now silver like in other languages because they don't
 deserve to be special.
 
 Arrows for return values are now grouped under "Function, Method".
+
+
+## Version 0.2.0
+
+Overhaul the entire theme generation process:
+
+1. Themes will be generated from ./templates and dumped into ./themes.
+2. Themes no longer require an explicit hex color value. Instead, you can
+choose a palette and define additional colors and styles, whose names you
+can use as substitutes to the actual hex color values. For example, the
+color "red" in the palette dark.json maps to `#ff1a1a`, which will be the
+value used in the actual theme.
+3. Scripts have been written to help generate themes from templates.
+
+*liver* has been renamed Liver Dark Full, which is a derivative of Liver Dark,
+a theme without font styling.
+
+Indent guides, focused items, sashes, etc. have been grouped under "accents",
+whose colour is lavender.
+
+Rename `neutral` to `centrist`.
