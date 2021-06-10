@@ -22,6 +22,12 @@ side-by-side.
 Some screenshots of code samples taken using
 [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap).
 
+File Icon Theme:
+[Helium Icon Theme](https://marketplace.visualstudio.com/items?itemName=helgardrichard.helium-icon-theme)
+
+Product Icon Theme:
+[Fluent Icons](https://marketplace.visualstudio.com/items?itemName=miguelsolorio.fluent-icons)
+
 ### Welcome Page
 
 ![Welcome Page](https://raw.githubusercontent.com/RenoirTan/liver/screenshots/screenshots/welcome_page.png)
