@@ -130,7 +130,7 @@
         "peekViewEditor.background": "background",
         "peekViewEditor.matchHighlightBackground": "selection/39",
         "peekViewResult.matchHighlightBackground": "selection/39",
-        "progressBar.background": "french-fuchsia",
+        "progressBar.background": "accent",
         "sash.hoverBorder": "accent/b9",
         "scrollbarSlider.activeBackground": "accent/b9",
         "scrollbarSlider.hoverBackground": "accent/79",

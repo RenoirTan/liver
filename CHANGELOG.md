@@ -1,24 +1,82 @@
-# LiVer v0.2.0 Changelog
+# LiVer v0.2.1 Changelog
 
-## Version 0.0.x
+## Version 0.2.1
 
-Original version.
+Fix progress bar colour to match other accented elements.
 
-## Version 0.1.0
+Flip the order of versions in this Changelog.
 
-Decrease the saturation of:
+## Version 0.2.0
 
-1. violet,
-2. lilac,
-3. lavender,
-4. blue-violet,
-5. cyan,
-6. mint-green
+Overhaul the entire theme generation process:
 
-In addition, `neutral`'s hex color value has been changed from `#797979` to
-`#7f7f7f` after I realised that 0xFF / 2 is 0x7F and not 0x79.
+1. Themes will be generated from ./templates and dumped into ./themes.
+2. Themes no longer require an explicit hex color value. Instead, you can
+choose a palette and define additional colors and styles, whose names you
+can use as substitutes to the actual hex color values. For example, the
+color "red" in the palette dark.json maps to `#ff1a1a`, which will be the
+value used in the actual theme.
+3. Scripts have been written to help generate themes from templates.
 
-White has been darkened from `#eeeeee` to `#e3e3e3`.
+*liver* has been renamed Liver Dark Full, which is a derivative of Liver Dark,
+a theme without font styling.
+
+Indent guides, focused items, sashes, etc. have been grouped under "accents",
+whose colour is lavender.
+
+Rename `neutral` to `centrist`.
+
+## Version 0.1.5
+
+Remove sample code from tracking because with them Github mistakenly
+counts them as part of the repo.
+
+Change the colour of constants and builtins from orange to red.
+
+Merge Operator 1 and Trivial Operators and remove
+keyword.operator.assignment from "Punctuation".
+
+Change the colour of operators to red.
+
+Classes and types are now lavender, like functions.
+
+Ruby variables are now silver like in other languages because they don't
+deserve to be special.
+
+Arrows for return values are now grouped under "Function, Method".
+
+## Version 0.1.4
+
+Add imported objects to "Types, Class, Support" and rename it to
+"Types, Class, Support, Imports". This fixes the bug where imports
+in Java are blue-violet but should instead be lilac like all class
+names.
+
+Set "source.toml punctuation.definition.table.toml" to "Punctuation"
+so that it doesn't appear purple.
+
+Explicitly include "constant.other.boolean" to "Builtin Variables".
+
+Add "constant.other.date" and "constant.other.datetime" to "Numbers"
+so they are rendered like numbers in languages like TOML.
+
+Add TOML to screenshots folder.
+
+Add "punctuation.definition.metadata" to "Markdown Delimiter".
+
+## Version 0.1.3
+
+Add preview screenshots to README.md. I didn't want to increment the
+patch number but `vsce` said I could not publish liver with the same
+semver and twisted my arm into doing it.
+
+## Version 0.1.2
+
+1. Moved keyword operators from "Keyword" to "Keyword Operator, Operator 2".
+2. Add `keyword.operator.range` (like Ruby ```..```) to "Trivial Operator".
+3. Add `variable.legacy.builtin` to "Builtin Variables". This means legacy
+builtins like Python's `functools.reduce` get a special orange colour to
+showcase their old age.
 
 ## Version 0.1.1
 
@@ -62,75 +120,22 @@ Also, I somehow managed to forget TOML and the bois exist and had to change
 the colours of their table names. This called for a new set under `tokenColors`
 called "Ini Table".
 
-## Version 0.1.2
+## Version 0.1.0
 
-1. Moved keyword operators from "Keyword" to "Keyword Operator, Operator 2".
-2. Add `keyword.operator.range` (like Ruby ```..```) to "Trivial Operator".
-3. Add `variable.legacy.builtin` to "Builtin Variables". This means legacy
-builtins like Python's `functools.reduce` get a special orange colour to
-showcase their old age.
+Decrease the saturation of:
 
-## Version 0.1.3
+1. violet,
+2. lilac,
+3. lavender,
+4. blue-violet,
+5. cyan,
+6. mint-green
 
-Add preview screenshots to README.md. I didn't want to increment the
-patch number but `vsce` said I could not publish liver with the same
-semver and twisted my arm into doing it.
+In addition, `neutral`'s hex color value has been changed from `#797979` to
+`#7f7f7f` after I realised that 0xFF / 2 is 0x7F and not 0x79.
 
-## Version 0.1.4
+White has been darkened from `#eeeeee` to `#e3e3e3`.
 
-Add imported objects to "Types, Class, Support" and rename it to
-"Types, Class, Support, Imports". This fixes the bug where imports
-in Java are blue-violet but should instead be lilac like all class
-names.
+## Version 0.0.x
 
-Set "source.toml punctuation.definition.table.toml" to "Punctuation"
-so that it doesn't appear purple.
-
-Explicitly include "constant.other.boolean" to "Builtin Variables".
-
-Add "constant.other.date" and "constant.other.datetime" to "Numbers"
-so they are rendered like numbers in languages like TOML.
-
-Add TOML to screenshots folder.
-
-Add "punctuation.definition.metadata" to "Markdown Delimiter".
-
-## Version 0.1.5
-
-Remove sample code from tracking because with them Github mistakenly
-counts them as part of the repo.
-
-Change the colour of constants and builtins from orange to red.
-
-Merge Operator 1 and Trivial Operators and remove
-keyword.operator.assignment from "Punctuation".
-
-Change the colour of operators to red.
-
-Classes and types are now lavender, like functions.
-
-Ruby variables are now silver like in other languages because they don't
-deserve to be special.
-
-Arrows for return values are now grouped under "Function, Method".
-
-
-## Version 0.2.0
-
-Overhaul the entire theme generation process:
-
-1. Themes will be generated from ./templates and dumped into ./themes.
-2. Themes no longer require an explicit hex color value. Instead, you can
-choose a palette and define additional colors and styles, whose names you
-can use as substitutes to the actual hex color values. For example, the
-color "red" in the palette dark.json maps to `#ff1a1a`, which will be the
-value used in the actual theme.
-3. Scripts have been written to help generate themes from templates.
-
-*liver* has been renamed Liver Dark Full, which is a derivative of Liver Dark,
-a theme without font styling.
-
-Indent guides, focused items, sashes, etc. have been grouped under "accents",
-whose colour is lavender.
-
-Rename `neutral` to `centrist`.
+Original version.
