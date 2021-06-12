@@ -260,12 +260,14 @@
         {
             "name": "Keyword Operator, Operator 2",
             "scope": [
+                "keyword.operator.wordlike",
                 "keyword.operator.new",
                 "keyword.operator.delete",
                 "keyword.operator.expression",
                 "keyword.operator.logical",
                 "keyword.operator.dereference",
-                "keyword.operator.unpacking"
+                "keyword.operator.unpacking",
+                "keyword.operator.noexcept"
             ],
             "settings": "keyword"
         },

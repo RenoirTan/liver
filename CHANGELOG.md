@@ -1,4 +1,10 @@
-# LiVer v0.2.1 Changelog
+# LiVer v0.2.2 Changelog
+
+## Version 0.2.2
+
+Fix colour of the `noexcept` keyword (keyword.operator.noexcept) in a
+constructor with member initialisation lists so that it is treated as a keyword
+instead of as an operator.
 
 ## Version 0.2.1
 
