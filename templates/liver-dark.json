@@ -28,7 +28,7 @@
             "literal": "lavender",
             "key": "foreground",
             "jsonkey": "french-fuchsia",
-            "inikey": "foreground",
+            "inikey": "french-fuchsia",
             "operator": "red",
             "punctuation": "foreground"
         }
@@ -391,7 +391,8 @@
                 "support.other.namespace.php",
                 "markup.changed.git_gutter",
                 "meta.type meta.brace",
-                "storage.modifier.import"
+                "storage.modifier.import",
+                "storage.type.generic"
             ],
             "settings": "lavender"
         },

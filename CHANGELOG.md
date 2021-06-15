@@ -16,7 +16,7 @@ Keys reorganised into 3 types:
 
 1. Config Key (key, white): For keys in style files like CSS.
 2. Json Key (jsonkey, fuchsia): For keys in JSON.
-3. Ini Key (inikey, white): For keys in Ini-like files (e.g. TOML),
+3. Ini Key (inikey, fuchsia): For keys in Ini-like files (e.g. TOML),
    previously "Configuration File Key".
 
 Colour literals now have their own token style: "Color Literal" (Lilac)
@@ -33,6 +33,9 @@ Remove `meta.function-call` from "Function, Method" to remove
 weird rendering behaviour.
 
 Markup inline code now correctly renders as vermillion.
+
+Add `storage.type.generic` to "Types, Class, Support, Imports" otherwise it
+will be coloured like a keyword in Java.
 
 ## Version 0.2.1
 
