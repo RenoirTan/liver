@@ -26,48 +26,6 @@
             "settings": "static//b"
         },
         {
-            "name": "HTML Attributes",
-            "scope": [
-                "text.html.basic entity.other.attribute-name.html",
-                "text.html.basic entity.other.attribute-name"
-            ],
-            "settings": "orange//i"
-        },
-        {
-            "name": "Markup Italic",
-            "scope": [
-                "markup.italic"
-            ],
-            "settings": "lilac//i"
-        },
-        {
-            "name": "Markup Bold-Italic",
-            "scope": [
-                "markup.bold markup.italic",
-                "markup.italic markup.bold",
-                "markup.quote markup.bold",
-                "markup.bold markup.italic string",
-                "markup.italic markup.bold string",
-                "markup.quote markup.bold string"
-            ],
-            "settings": "lilac//ib"
-        },
-        {
-            "name": "Markup Quote",
-            "scope": [
-                "markup.quote"
-            ],
-            "settings": "//i"
-        },
-        {
-            "name": "Markup Bold",
-            "scope": [
-                "markup.bold",
-                "markup.bold string"
-            ],
-            "settings": "lilac//b"
-        },
-        {
             "name": "URL",
             "scope": [
                 "*url*",
@@ -75,13 +33,6 @@
                 "*uri*"
             ],
             "settings": "link//u"
-        },
-        {
-            "name": "Markup Underline",
-            "scope": [
-                "markup.underline"
-            ],
-            "settings": "lilac//u"
         }
     ]
 }

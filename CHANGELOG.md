@@ -6,6 +6,34 @@ Fix colour of the `noexcept` keyword (keyword.operator.noexcept) in a
 constructor with member initialisation lists so that it is treated as a keyword
 instead of as an operator.
 
+Fix error where a hex RGB literal results in a `ValueError`.
+
+Remove special colours for markup font styles specified by the users
+and instead give them special font styles to allow users to tell them apart
+by default in *Liver Dark*.
+
+Keys reorganised into 3 types:
+
+1. Config Key (key, white): For keys in style files like CSS.
+2. Json Key (jsonkey, fuchsia): For keys in JSON.
+3. Ini Key (inikey, white): For keys in Ini-like files (e.g. TOML),
+   previously "Configuration File Key".
+
+Colour literals now have their own token style: "Color Literal" (Lilac)
+
+`keyword.other.unit` added to "Keyword".
+(e.g. The px in 5px in a typical CSS file)
+
+Remove `source.python punctuation` from "Punctuation".
+
+`punctuation.definition.decorator` removed from "Punctuation". This means
+their colour now inherits from the entity it is attached to.
+
+Remove `meta.function-call` from "Function, Method" to remove
+weird rendering behaviour.
+
+Markup inline code now correctly renders as vermillion.
+
 ## Version 0.2.1
 
 Fix progress bar colour to match other accented elements.
