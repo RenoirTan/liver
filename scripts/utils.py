@@ -74,9 +74,9 @@ def color_16_to_256(string: str) -> str:
         byte_hex = "#"
         for digit in string[1:]:
             byte_digit = hex(int(digit, 16) * 0x11)[2:] # get rid of leading 0x
-            if digit > 0:
+            if int(digit, base=16) == 0:
                 byte_hex += "00"
-            elif digit > 0: # i.e. byte_digit >= 0x11 (2 digits)
+            else: # i.e. byte_digit >= 0x11 (2 digits)
                 byte_hex += byte_digit
         return byte_hex
 

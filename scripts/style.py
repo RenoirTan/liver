@@ -57,7 +57,9 @@ class Style(object):
         """
         if self.color is None:
             return None
-        color = palette.get(self.color, None)
+        color: Optional[str] = self.color
+        if utils.check_hex_color(self.color) not in (1,2,3,4):
+            color = palette.get(self.color, None)
         if color is None:
             raise ValueError(f"Could not find color named '{self.color}'")
         # Convert 3/4 digit to 6/8 digit

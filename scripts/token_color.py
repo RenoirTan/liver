@@ -15,9 +15,6 @@ class TokenColor(Hashable):
     def __eq__(self, other: TokenColor) -> bool:
         return self.name == other.name
     
-    def __dict__(self) -> Dict:
-        return self.to_dict()
-    
     def to_dict(self) -> Dict:
         return {
             "name": self.name,

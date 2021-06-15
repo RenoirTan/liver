@@ -26,7 +26,9 @@
             "static": "red",
             "keyword": "blue-violet",
             "literal": "lavender",
-            "key": "french-fuchsia",
+            "key": "foreground",
+            "jsonkey": "french-fuchsia",
+            "inikey": "french-fuchsia",
             "operator": "red",
             "punctuation": "foreground"
         }
@@ -212,13 +214,6 @@
             "settings": "violet"
         },
         {
-            "name": "Colors",
-            "scope": [
-                "constant.other.color"
-            ],
-            "settings": "foreground"
-        },
-        {
             "name": "Invalid",
             "scope": [
                 "invalid",
@@ -230,7 +225,8 @@
             "name": "Keyword",
             "scope": [
                 "keyword",
-                "keyword.other"
+                "keyword.other",
+                "keyword.other.unit"
             ],
             "settings": "keyword"
         },
@@ -260,19 +256,20 @@
         {
             "name": "Keyword Operator, Operator 2",
             "scope": [
+                "keyword.operator.wordlike",
                 "keyword.operator.new",
                 "keyword.operator.delete",
                 "keyword.operator.expression",
                 "keyword.operator.logical",
                 "keyword.operator.dereference",
-                "keyword.operator.unpacking"
+                "keyword.operator.unpacking",
+                "keyword.operator.noexcept"
             ],
             "settings": "keyword"
         },
         {
             "name": "Punctuation",
             "scope": [
-                "source.python punctuation",
                 "punctuation.separator",
                 "punctuation.section",
                 "punctuation.accessor",
@@ -292,7 +289,6 @@
                 "markup.deleted.git_gutter",
                 "punctuation.definition.tag",
                 "punctuation.section.embedded",
-                "punctuation.definition.decorator",
                 "tag.decorator.js entity.name.tag.js",
                 "tag.decorator.js punctuation.definition.tag.js"
             ],
@@ -302,7 +298,6 @@
             "name": "Function, Method",
             "scope": [
                 "entity.name.function",
-                "meta.function-call",
                 "variable.function",
                 "support.function",
                 "keyword.other.special-method",
@@ -345,7 +340,6 @@
             "name": "Numbers",
             "scope": [
                 "constant.numeric",
-                "keyword.other.unit",
                 "constant.other.datetime",
                 "constant.other.date"
             ],
@@ -364,7 +358,15 @@
             "scope": [
                 "constant.escape"
             ],
-            "settings": "literal"
+            "settings": "foreground"
+        },
+        {
+            "name": "Color Literal",
+            "scope": [
+                "constant.other.color.rgb-value.hex",
+                "punctuation.definition.constant.css"
+            ],
+            "settings": "lilac"
         },
         {
             "name": "Symbols, Markup Heading",
@@ -389,21 +391,28 @@
                 "support.other.namespace.php",
                 "markup.changed.git_gutter",
                 "meta.type meta.brace",
-                "storage.modifier.import"
+                "storage.modifier.import",
+                "storage.type.generic"
             ],
             "settings": "lavender"
         },
         {
-            "name": "Map Key",
+            "name": "Json Key",
+            "scope": [
+                "support.type.property-name",
+                "punctuation.support.type.property-name"
+            ],
+            "settings": "jsonkey"
+        },
+        {
+            "name": "Config Key",
             "scope": [
                 "source.css support.type.property-name",
                 "source.sass support.type.property-name",
                 "source.scss support.type.property-name",
                 "source.less support.type.property-name",
                 "source.stylus support.type.property-name",
-                "source.postcss support.type.property-name",
-                "meta.object-literal.key",
-                "source.json meta.structure.dictionary.json support.type.property-name.json"
+                "source.postcss support.type.property-name"
             ],
             "settings": "key"
         },
@@ -425,15 +434,13 @@
             "settings": "violet"
         },
         {
-            "name": "Configuration File Key",
+            "name": "Ini Key",
             "scope": [
-                "source.json meta.structure.dictionary.json support.type.property-name.json",
-                "punctuation.support.type.property-name",
                 "source.toml entity.name.tag",
                 "source.ini keyword.other",
                 "text.html.markdown support.type.property-name.json"
             ],
-            "settings": "key"
+            "settings": "inikey"
         },
         {
             "name": "HTML Attributes",
@@ -489,18 +496,11 @@
             "settings": "foreground"
         },
         {
-            "name": "Markdown Markup Raw Inline",
+            "name": "Markup Raw Inline",
             "scope": [
-                "text.html.markdown markup.inline.raw.markdown"
+                "markup.inline.raw"
             ],
-            "settings": "orange"
-        },
-        {
-            "name": "Markdown Markup Raw Inline Punctuation",
-            "scope": [
-                "text.html.markdown markup.inline.raw.markdown punctuation.definition.raw.markdown"
-            ],
-            "settings": "orange"
+            "settings": "vermillion"
         },
         {
             "name": "Markdown Heading",
@@ -516,7 +516,14 @@
             "scope": [
                 "markup.italic"
             ],
-            "settings": "lilac"
+            "settings": "foreground//i"
+        },
+        {
+            "name": "Markup Italic Delimiter",
+            "scope": [
+                "punctuation.definition.italic"
+            ],
+            "settings": "lilac//i"
         },
         {
             "name": "Markup Bold",
@@ -524,7 +531,14 @@
                 "markup.bold",
                 "markup.bold string"
             ],
-            "settings": "lilac"
+            "settings": "foreground//b"
+        },
+        {
+            "name": "Markup Bold Delimiter",
+            "scope": [
+                "punctuation.definition.bold"
+            ],
+            "settings": "lilac//b"
         },
         {
             "name": "Markup Bold-Italic",
@@ -536,14 +550,14 @@
                 "markup.italic markup.bold string",
                 "markup.quote markup.bold string"
             ],
-            "settings": "lilac"
+            "settings": "foreground//ib"
         },
         {
             "name": "Markup Underline",
             "scope": [
                 "markup.underline"
             ],
-            "settings": "lilac"
+            "settings": "foreground//u"
         },
         {
             "name": "Markdown Blockquote",
