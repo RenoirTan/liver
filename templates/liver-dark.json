@@ -6,26 +6,28 @@
         "parents": [],
         "colors": {
             "background": "calm-black",
-            "background-gray": "calm-gray",
+            "background-neutral": "calm-gray",
             "foreground": "silver",
-            "foreground-gray": "gray",
-            "inactive": "gray",
+            "foreground-neutral": "gray",
+            "background-inactive": "dark-gray",
+            "foreground-inactive": "light-gray",
             "good": "mint-green",
             "ok": "beige",
             "modified": "beige",
             "neutral": "gray",
             "warning": "orange",
             "bad": "red",
-            "accent": "lavender",
+            "accent": "violet",
             "link": "accent",
             "link-active": "blue-violet",
             "toggle": "calm-gray",
             "selection": "lilac",
             "selection-inactive": "calm-gray",
-            "selection-textbox": "lavender",
+            "selection-textbox": "violet",
             "static": "red",
             "keyword": "blue-violet",
-            "literal": "lavender",
+            "string": "mint-green",
+            "literal": "violet",
             "key": "foreground",
             "jsonkey": "french-fuchsia",
             "inikey": "french-fuchsia",
@@ -36,7 +38,7 @@
     "colors": {
         "activityBar.background": "background",
         "activityBar.foreground": "accent",
-        "activityBar.inactiveForeground": "inactive",
+        "activityBar.inactiveForeground": "foreground-inactive",
         "activityBarBadge.background": "red",
         "activityBarBadge.foreground": "black",
         "breadcrumb.focusForeground": "link",
@@ -59,6 +61,8 @@
         "editor.findMatchBorder": "selection/b9",
         "editor.findMatchHighlightBackground": "selection/29",
         "editor.hoverHighlightBackground": "selection-inactive",
+        "editor.lineHighlightBackground": "background",
+        "editor.lineHighlightBorder": "accent/39",
         "editorCursor.foreground": "accent",
         "editorCursor.background": "accent",
         "editorBracketMatch.border": "accent",
@@ -69,7 +73,7 @@
         "editorHint.foreground": "good",
         "editorGroup.border": "accent/09",
         "editorGroup.dropBackground": "accent/39",
-        "editorGroupHeader.noTabsBackground": "background-gray",
+        "editorGroupHeader.noTabsBackground": "background-neutral",
         "editorGroupHeader.tabsBackground": "background",
         "editorGroup.emptyBackground": "background",
         "editorGroupHeader.border": "calm-gray",
@@ -78,7 +82,7 @@
         "editorGutter.deletedBackground": "bad",
         "editorIndentGuide.background": "accent/39",
         "editorIndentGuide.activeBackground": "accent/b9",
-        "editorLineNumber.foreground": "foreground-gray",
+        "editorLineNumber.foreground": "foreground-neutral",
         "editorLineNumber.activeForeground": "accent",
         "editorOverviewRuler.addedForeground": "good",
         "editorOverviewRuler.modifiedForeground": "modified",
@@ -95,17 +99,17 @@
         "gitDecoration.renamedResourceForeground": "french-fuchsia/b9",
         "gitDecoration.untrackedResourceForeground": "good/b9",
         "icon.foreground": "foreground",
-        "input.background": "background-gray/59",
+        "input.background": "background-neutral/59",
         "input.border": "accent/79",
         "inputOption.activeBorder": "accent/79",
-        "inputValidation.errorBackground": "background-gray/b9",
+        "inputValidation.errorBackground": "background-neutral/b9",
         "inputValidation.errorBorder": "accent/b9",
         "list.activeSelectionBackground": "selection/39",
         "list.dropBackground": "selection-textbox/19",
-        "listFilterWidget.background": "background-gray/79",
+        "listFilterWidget.background": "background-neutral/79",
         "listFilterWidget.outline": "accent",
         "listFilterWidget.noMatchesOutline": "bad",
-        "list.deemphasizedForeground": "inactive",
+        "list.deemphasizedForeground": "foreground-inactive",
         "list.focusBackground": "selection-textbox/39",
         "list.focusOutline": "accent/39",
         "list.hoverBackground": "selection-textbox/09",
@@ -125,8 +129,8 @@
         "minimapGutter.modifiedBackground": "modified",
         "minimapGutter.deletedBackground": "bad",
         "minimapSlider.background": "neutral/59",
-        "minimapSlider.hoverBackground": "silver/59",
-        "minimapSlider.activeBackground": "silver/59",
+        "minimapSlider.hoverBackground": "accent/39",
+        "minimapSlider.activeBackground": "accent/59",
         "panelTitle.activeBorder": "accent",
         "peekView.border": "accent/d9",
         "peekViewEditor.background": "background",
@@ -134,8 +138,8 @@
         "peekViewResult.matchHighlightBackground": "selection/39",
         "progressBar.background": "accent",
         "sash.hoverBorder": "accent/b9",
-        "scrollbarSlider.activeBackground": "accent/b9",
-        "scrollbarSlider.hoverBackground": "accent/79",
+        "scrollbarSlider.activeBackground": "accent/e9",
+        "scrollbarSlider.hoverBackground": "accent/99",
         "selection.background": "selection/59",
         "sideBar.background": "background",
         "sideBar.foreground": "foreground/99",
@@ -150,7 +154,7 @@
         "tab.activeBackground": "background",
         "tab.activeBorderTop": "accent",
         "tab.unfocusedActiveBackground": "background",
-        "tab.inactiveBackground": "neutral/39",
+        "tab.inactiveBackground": "background-inactive/b9",
         "tab.hoverBackground": "background",
         "textLink.foreground": "link",
         "textLink.activeForeground": "link-active",
@@ -159,10 +163,10 @@
         "toolbar.hoverBackground": "silver/59",
         "tree.indentGuidesStroke": "accent/b9",
         "walkThrough.embeddedEditorBackground": "background",
-        "welcomePage.progress.background": "background-gray",
+        "welcomePage.progress.background": "dark-gray",
         "welcomePage.progress.foreground": "accent",
         "welcomePage.tileBackground": "background",
-        "widget.shadow": "neutral/79"
+        "widget.shadow": "accent/59"
     },
     "tokenColors": [
         {
@@ -261,8 +265,6 @@
                 "keyword.operator.delete",
                 "keyword.operator.expression",
                 "keyword.operator.logical",
-                "keyword.operator.dereference",
-                "keyword.operator.unpacking",
                 "keyword.operator.noexcept"
             ],
             "settings": "keyword"
@@ -308,7 +310,7 @@
                 "source.python punctuation.separator.annotation.result",
                 "source.rust keyword.operator.arrow.skinny"
             ],
-            "settings": "lavender"
+            "settings": "violet"
         },
         {
             "name": "Other Variable, String Link",
@@ -326,7 +328,7 @@
                 "string",
                 "string.regexp"
             ],
-            "settings": "mint-green"
+            "settings": "string"
         },
         {
             "name": "Escape Character",
@@ -334,7 +336,7 @@
                 "constant.character.escape",
                 "constant.other.placeholder"
             ],
-            "settings": "cyan"
+            "settings": "yellow"
         },
         {
             "name": "Numbers",
@@ -394,7 +396,7 @@
                 "storage.modifier.import",
                 "storage.type.generic"
             ],
-            "settings": "lavender"
+            "settings": "violet"
         },
         {
             "name": "Json Key",
@@ -421,7 +423,7 @@
             "scope": [
                 "entity.other.attribute-name"
             ],
-            "settings": "lavender"
+            "settings": "violet"
         },
         {
             "name": "Ini Table",
@@ -431,7 +433,7 @@
                 "source.toml entity.other.attribute-name",
                 "source.toml meta.tag"
             ],
-            "settings": "violet"
+            "settings": "blue-violet"
         },
         {
             "name": "Ini Key",
@@ -600,7 +602,7 @@
             "scope": [
                 "markup.raw.block"
             ],
-            "settings": "lavender"
+            "settings": "violet"
         },
         {
             "name": "Markdown Raw Block Fenced",

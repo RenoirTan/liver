@@ -1,4 +1,4 @@
-# LiVer v0.2.2 Changelog
+# LiVer v0.3.0 Changelog
 
 ## Version 0.2.2
 

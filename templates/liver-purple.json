@@ -1,0 +1,16 @@
+{
+    "name": "Liver Purple",
+    "type": "dark",
+    "generator": {
+        "palette": "dark",
+        "parents": [
+            "liver-dark"
+        ],
+        "colors": {
+            "background": "violet"
+        },
+        "styles": {}
+    },
+    "colors": {},
+    "tokenColors": []
+}
