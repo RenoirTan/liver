@@ -50,6 +50,7 @@
         "checkbox.foreground": "accent",
         "descriptionForeground": "foreground",
         "dropdown.background": "toggle",
+        "dropdown.listBackground": "toggle",
         "dropdown.foreground": "accent",
         "editor.background": "background",
         "editor.foreground": "foreground",
