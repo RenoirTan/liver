@@ -1,0 +1,40 @@
+{
+    "name": "Liver Purple Full",
+    "type": "dark",
+    "generator": {
+        "palette": "purple",
+        "parents": [
+            "liver-purple"
+        ],
+        "colors": {},
+        "styles": {}
+    },
+    "colors": {},
+    "tokenColors": [
+        {
+            "name": "Comment",
+            "scope": [
+                "comment",
+                "punctuation.definition.comment"
+            ],
+            "settings": "medium-light-violet//i"
+        },
+        {
+            "name": "Constant Variables",
+            "scope": [
+                "constant.other.caps.python",
+                "support.constant"
+            ],
+            "settings": "static//b"
+        },
+        {
+            "name": "URL",
+            "scope": [
+                "*url*",
+                "*link*",
+                "*uri*"
+            ],
+            "settings": "link//u"
+        }
+    ]
+}
