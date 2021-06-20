@@ -1,4 +1,44 @@
-# LiVer v0.2.2 Changelog
+# LiVer v0.3.0 Changelog
+
+## Version 0.3.0
+
+Added Liver Purple and Liver Purple Full, derivatives of Liver Dark and
+Liver Dark Full respectively with violet backgrounds with white as the accent
+colour.
+
+Added Yellow.
+
+Orchid is now brighter, but is still unused.
+
+Lavender renamed to violet. This means any setting that uses violet will now
+look like lavender.
+
+Dark-silver, light-gray and dark-gray added to dark.json for more granular
+control of colours.
+
+Make calm-gray darker.
+
+New palette called purple.json added and is derived from dark.json.
+
+Generator colours have been renamed so that they do not reference any specific
+colour (helps with portability).
+
+The colour of the icons in the activity bar and inactive line numbers has
+been brightened.
+
+The minimap slider's colour will be the same as the scrollbar when you hover
+your mouse over it.
+
+The scrollbar is now less transparent when you hover over it.
+
+Shadows are now coloured.
+
+Dereference (`*ptr`) and unpacking operators (`...args`) have been removed from
+"Keyword Operator".
+
+Escape characters are now yellow and not cyan.
+
+"Ini Table" names are now blue-violet.
 
 ## Version 0.2.2
 

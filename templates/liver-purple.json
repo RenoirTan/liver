@@ -1,0 +1,43 @@
+{
+    "name": "Liver Purple",
+    "type": "dark",
+    "generator": {
+        "palette": "purple",
+        "parents": [
+            "liver-dark"
+        ],
+        "colors": {
+            "accent": "silver",
+            "background": "dark-violet",
+            "background-neutral": "medium-dark-violet",
+            "background-inactive": "medium-violet",
+            "background-violet": "dark-violet",
+            "foreground-inactive": "medium-light-violet",
+            "foreground-noncode": "violet",
+            "link": "violet",
+            "selection": "dark-silver",
+            "selection-inactive": "background-neutral",
+            "selection-textbox": "violet"
+        },
+        "styles": {}
+    },
+    "colors": {
+        "activityBar.background": "medium-dark-violet",
+        "button.background": "toggle/79",
+        "editor.lineHighlightBackground": "very-dark-violet",
+        "editorGutter.background": "medium-violet/29",
+        "foreground": "foreground-noncode",
+        "sideBarSectionHeader.background": "medium-dark-violet",
+        "tab.inactiveBackground": "very-dark-violet"
+    },
+    "tokenColors": [
+        {
+            "name": "Comment",
+            "scope": [
+                "comment",
+                "punctuation.definition.comment"
+            ],
+            "settings": "medium-light-violet"
+        }
+    ]
+}
