@@ -1,4 +1,21 @@
-# LiVer v0.3.0 Changelog
+# LiVer v0.4.0 Changelog
+
+## Version 0.4.0
+
+Change Python API for converting templates into themes in anticipation for
+palette inheritance.
+
+Decrease the brightness of `dark-gray` and `calm-black` to make everything
+stand out more.
+
+Simplify syntax highlighting for operators, punctuation, keywords and
+string interpolation.
+
+Constants (static) are now vermillion again.
+
+Literals are now lilac instead of violet.
+
+String interpolators and formatting sequences are now yellow.
 
 ## Version 0.3.0
 

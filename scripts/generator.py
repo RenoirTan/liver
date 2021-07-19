@@ -65,7 +65,7 @@ def resolve_colors(
     return united
 
 
-def has_parents(template: Dict[str, Any]) -> bool:
+def theme_has_parents(template: Dict[str, Any]) -> bool:
     parents = template["generator"].get("parents", [])
     return len(parents) > 0
 
@@ -98,7 +98,7 @@ def list_set_add(array: List[H], element: H) -> List[H]:
     return array
 
 
-def inherit_from_parents(template: Dict[str, Any]) -> Dict[str, Any]:
+def theme_inherit_from_parents(template: Dict[str, Any]) -> Dict[str, Any]:
     """
     TODO: COMPLETE THIS FUNCTION
 
@@ -125,7 +125,7 @@ def inherit_from_parents(template: Dict[str, Any]) -> Dict[str, Any]:
 
     for parent_name in parents:
         parent = get_template(parent_name)
-        parent = inherit_from_parents(parent) # Recursion
+        parent = theme_inherit_from_parents(parent) # Recursion
         _add_template(parent)
     _add_template(template)
     template["generator"]["colors"] = generator_colors
@@ -136,8 +136,8 @@ def inherit_from_parents(template: Dict[str, Any]) -> Dict[str, Any]:
     return template
 
 
-def generate(template: Dict[str, Any]) -> Dict[str, Any]:
-    template = inherit_from_parents(template)
+def generate_theme(template: Dict[str, Any]) -> Dict[str, Any]:
+    template = theme_inherit_from_parents(template)
     output = get_theme_base(template["name"], template["type"])
     palette = get_palette(template["generator"]["palette"])
     colors = resolve_colors(template["generator"]["colors"], palette)

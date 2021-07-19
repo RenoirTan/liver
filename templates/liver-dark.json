@@ -24,10 +24,10 @@
             "selection": "lilac",
             "selection-inactive": "background-neutral",
             "selection-textbox": "violet",
-            "static": "red",
+            "static": "vermillion",
             "keyword": "blue-violet",
             "string": "mint-green",
-            "literal": "violet",
+            "literal": "lilac",
             "key": "foreground",
             "jsonkey": "french-fuchsia",
             "inikey": "french-fuchsia",
@@ -207,17 +207,6 @@
             "settings": "static"
         },
         {
-            "name": "Inline Expression",
-            "scope": [
-                "constant.character.format.placeholder.other",
-                "punctuation.definition.template-expression",
-                "punctuation.section.embedded",
-                "source.rust punctuation.definition.interpolation",
-                "source.rust meta.interpolation"
-            ],
-            "settings": "violet"
-        },
-        {
             "name": "Invalid",
             "scope": [
                 "invalid",
@@ -237,6 +226,7 @@
         {
             "name": "Storage",
             "scope": [
+                "storage",
                 "storage.type",
                 "storage.modifier"
             ],
@@ -245,20 +235,12 @@
         {
             "name": "Operator",
             "scope": [
-                "keyword.operator",
-                "keyword.other.template",
-                "keyword.other.substitution",
-                "keyword.operator.assignment",
-                "keyword.operator.type",
-                "keyword.operator.range",
-                "storage.type.function.arrow",
-                "meta.tag",
-                "source.js constant.other.object.key.js string.unquoted.label.js"
+                "keyword.operator"
             ],
             "settings": "operator"
         },
         {
-            "name": "Keyword Operator, Operator 2",
+            "name": "Keyword Operator",
             "scope": [
                 "keyword.operator.wordlike",
                 "keyword.operator.new",
@@ -272,14 +254,7 @@
         {
             "name": "Punctuation",
             "scope": [
-                "punctuation.separator",
-                "punctuation.section",
-                "punctuation.accessor",
-                "string.template meta.template.expression",
-                "source.rust keyword.operator.key-value",
-                "keyword.operator.namespace",
-                "keyword.operator.access",
-                "source.toml punctuation.definition.table.inline"
+                "punctuation"
             ],
             "settings": "punctuation"
         },
@@ -291,8 +266,7 @@
                 "markup.deleted.git_gutter",
                 "punctuation.definition.tag",
                 "punctuation.section.embedded",
-                "tag.decorator.js entity.name.tag.js",
-                "tag.decorator.js punctuation.definition.tag.js"
+                "tag"
             ],
             "settings": "vermillion"
         },
@@ -307,8 +281,7 @@
                 "variable.import.parameter.js",
                 "variable.other.class.js",
                 "entity.name.method.js",
-                "source.python punctuation.separator.annotation.result",
-                "source.rust keyword.operator.arrow.skinny"
+                "meta.function-call"
             ],
             "settings": "violet"
         },
@@ -331,44 +304,28 @@
             "settings": "string"
         },
         {
-            "name": "Escape Character",
+            "name": "Escape Character, Format Sequence",
             "scope": [
                 "constant.character.escape",
-                "constant.other.placeholder"
+                "constant.other.placeholder",
+                "constant.character.format.placeholder.other",
+                "punctuation.definition.template-expression",
+                "punctuation.section.embedded",
+                "source.rust punctuation.definition.interpolation",
+                "source.rust meta.interpolation"
             ],
             "settings": "yellow"
         },
         {
-            "name": "Numbers",
+            "name": "Literals",
             "scope": [
                 "constant.numeric",
                 "constant.other.datetime",
-                "constant.other.date"
-            ],
-            "settings": "literal"
-        },
-        {
-            "name": "Parameter, Argument",
-            "scope": [
-                "variable.parameter",
-                "meta.function-call.arguments"
-            ],
-            "settings": "foreground"
-        },
-        {
-            "name": "Constant Literal",
-            "scope": [
-                "constant.escape"
-            ],
-            "settings": "foreground"
-        },
-        {
-            "name": "Color Literal",
-            "scope": [
+                "constant.other.date",
                 "constant.other.color.rgb-value.hex",
                 "punctuation.definition.constant.css"
             ],
-            "settings": "lilac"
+            "settings": "literal"
         },
         {
             "name": "Symbols, Markup Heading",
@@ -396,7 +353,7 @@
                 "storage.modifier.import",
                 "storage.type.generic"
             ],
-            "settings": "violet"
+            "settings": "lilac"
         },
         {
             "name": "Json Key",
@@ -423,7 +380,7 @@
             "scope": [
                 "entity.other.attribute-name"
             ],
-            "settings": "violet"
+            "settings": "vermillion"
         },
         {
             "name": "Ini Table",
@@ -443,21 +400,6 @@
                 "text.html.markdown support.type.property-name.json"
             ],
             "settings": "inikey"
-        },
-        {
-            "name": "HTML Attributes",
-            "scope": [
-                "text.html.basic entity.other.attribute-name.html",
-                "text.html.basic entity.other.attribute-name"
-            ],
-            "settings": "orange"
-        },
-        {
-            "name": "Sass Keyword Control",
-            "scope": [
-                "source.sass keyword.control"
-            ],
-            "settings": "cyan"
         },
         {
             "name": "Markup Inserted",

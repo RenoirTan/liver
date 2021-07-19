@@ -19,7 +19,7 @@ def generate(*names: str) -> int:
     for name in names:
         print(f"Generating: {name}...", end="")
         template = generator.get_template(name)
-        output = generator.generate(template)
+        output = generator.generate_theme(template)
         json.dump(
             output,
             Path(generator.THEMES_PATH / (name + ".json")).open("w")
