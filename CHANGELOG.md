@@ -1,4 +1,8 @@
-# LiVer v0.4.0 Changelog
+# LiVer v0.4.1 Changelog
+
+## Version 0.4.1
+
+Add arguments and parameters to "Variables".
 
 ## Version 0.4.0
 

@@ -182,7 +182,9 @@
             "scope": [
                 "variable",
                 "meta.block variable.other",
-                "support.variable.property.js"
+                "support.variable.property.js",
+                "variable.parameter",
+                "meta.function-call.arguments"
             ],
             "settings": "foreground"
         },
