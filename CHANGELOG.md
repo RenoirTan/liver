@@ -1,4 +1,15 @@
-# LiVer v0.4.1 Changelog
+# LiVer v0.4.2 Changelog
+
+## Version 0.4.2
+
+Merge:
+
+- "Builtin Variables" and "Constant Variables" to "Builtin, Constant"
+- "Keyword", "Storage" and "Keyword Operator" to "Keyword"
+
+Add `storage.modifier.package.java` to "Types, Class, Support, Import, Namespace".
+
+Set the color for alt values beside markdown links to `foreground`.
 
 ## Version 0.4.1
 

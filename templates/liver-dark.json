@@ -189,22 +189,17 @@
             "settings": "foreground"
         },
         {
-            "name": "Builtin Variables",
+            "name": "Builtin, Constant",
             "scope": [
                 "variable.other.constant",
                 "variable.language",
                 "constant.language",
                 "support.variable.magic",
                 "variable.legacy.builtin",
-                "constant.other.boolean"
-            ],
-            "settings": "static"
-        },
-        {
-            "name": "Constant Variables",
-            "scope": [
+                "constant.other.boolean",
                 "constant.other.caps.python",
-                "support.constant"
+                "support.constant",
+                "variable.parameter.function.language.special"
             ],
             "settings": "static"
         },
@@ -221,13 +216,13 @@
             "scope": [
                 "keyword",
                 "keyword.other",
-                "keyword.other.unit"
-            ],
-            "settings": "keyword"
-        },
-        {
-            "name": "Storage",
-            "scope": [
+                "keyword.other.unit",
+                "keyword.operator.wordlike",
+                "keyword.operator.new",
+                "keyword.operator.delete",
+                "keyword.operator.expression",
+                "keyword.operator.logical",
+                "keyword.operator.noexcept",
                 "storage",
                 "storage.type",
                 "storage.modifier"
@@ -240,18 +235,6 @@
                 "keyword.operator"
             ],
             "settings": "operator"
-        },
-        {
-            "name": "Keyword Operator",
-            "scope": [
-                "keyword.operator.wordlike",
-                "keyword.operator.new",
-                "keyword.operator.delete",
-                "keyword.operator.expression",
-                "keyword.operator.logical",
-                "keyword.operator.noexcept"
-            ],
-            "settings": "keyword"
         },
         {
             "name": "Punctuation",
@@ -273,7 +256,7 @@
             "settings": "vermillion"
         },
         {
-            "name": "Function, Method",
+            "name": "Function, Method, Macro",
             "scope": [
                 "entity.name.function",
                 "variable.function",
@@ -286,14 +269,6 @@
                 "meta.function-call"
             ],
             "settings": "violet"
-        },
-        {
-            "name": "Other Variable, String Link",
-            "scope": [
-                "support.other.variable",
-                "string.other.link"
-            ],
-            "settings": "lilac"
         },
         {
             "name": "String",
@@ -341,7 +316,7 @@
             "settings": "mint-green"
         },
         {
-            "name": "Types, Class, Support, Imports",
+            "name": "Types, Class, Support, Import, Namespace",
             "scope": [
                 "entity.name",
                 "entity.other.inherited-class",
@@ -353,7 +328,10 @@
                 "markup.changed.git_gutter",
                 "meta.type meta.brace",
                 "storage.modifier.import",
-                "storage.type.generic"
+                "storage.type.generic",
+                "entity.name.namespace",
+                "meta.package.java",
+                "storage.modifier.package.java"
             ],
             "settings": "lilac"
         },
@@ -531,6 +509,14 @@
             "name": "Markdown Link Description",
             "scope": [
                 "string.other.link.description.title.markdown"
+            ],
+            "settings": "foreground"
+        },
+        {
+            "name": "Markdown Link Title",
+            "scope": [
+                "string.other.link.title.markdown",
+                "string.other.link.description.markdown"
             ],
             "settings": "foreground"
         },
