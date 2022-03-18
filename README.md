@@ -1,4 +1,4 @@
-# LiVer v0.4.2
+# LiVer v0.4.3
 
 [Github Repo](https://github.com/RenoirTan/liver)
 
@@ -25,24 +25,24 @@ Product Icon Theme:
 
 ### Welcome Page
 
-![Welcome Page](https://raw.githubusercontent.com/RenoirTan/liver/screenshots/screenshots/welcome_page.png)
+![Welcome Page](screenshots/welcome_page.png)
 
 ### Python
 
-![Python](https://raw.githubusercontent.com/RenoirTan/liver/screenshots/screenshots/python-s.png)
+![Python](screenshots/python-s.png)
 
 ### C
 
-![C](https://raw.githubusercontent.com/RenoirTan/liver/screenshots/screenshots/c.png)
+![C](screenshots/c.png)
 
 ### HTML
 
-![HTML](https://raw.githubusercontent.com/RenoirTan/liver/screenshots/screenshots/html.png)
+![HTML](screenshots/html.png)
 
 ### JavaScript
 
-![JavaScript](https://raw.githubusercontent.com/RenoirTan/liver/screenshots/screenshots/javascript.png)
+![JavaScript](screenshots/javascript.png)
 
 ### CSS
 
-![CSS](https://raw.githubusercontent.com/RenoirTan/liver/screenshots/screenshots/css.png)
+![CSS](screenshots/css.png)

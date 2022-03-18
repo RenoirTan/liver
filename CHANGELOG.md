@@ -1,4 +1,10 @@
-# LiVer v0.4.2 Changelog
+# LiVer v0.4.3 Changelog
+
+## Version 0.4.3
+
+*"Optimise for certain search engines."*
+
+Fix screenshot links.
 
 ## Version 0.4.2
 
