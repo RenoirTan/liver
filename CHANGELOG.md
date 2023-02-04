@@ -2,7 +2,13 @@
 
 ## Version 0.4.4
 
-- Update scripts
+Update scripts to indent json with 4 spaces per tab
+
+Fix dialog widget (aka `editorWidget`) colours for Liver Purple
+
+Reduce widget shadow opacity for Liver Purple
+
+Change non-code foreground colour to `silver`
 
 ## Version 0.4.3
 

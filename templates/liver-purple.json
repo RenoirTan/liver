@@ -13,7 +13,7 @@
             "background-inactive": "medium-violet",
             "background-violet": "dark-violet",
             "foreground-inactive": "medium-light-violet",
-            "foreground-noncode": "violet",
+            "foreground-noncode": "silver",
             "link": "violet",
             "selection": "dark-silver",
             "selection-inactive": "background-neutral",
@@ -28,7 +28,8 @@
         "editorGutter.background": "medium-violet/29",
         "foreground": "foreground-noncode",
         "sideBarSectionHeader.background": "medium-dark-violet",
-        "tab.inactiveBackground": "very-dark-violet"
+        "tab.inactiveBackground": "very-dark-violet",
+        "widget.shadow": "accent/1f"
     },
     "tokenColors": [
         {
