@@ -88,6 +88,7 @@
         "editorOverviewRuler.modifiedForeground": "modified",
         "editorOverviewRuler.deletedForeground": "bad",
         "editorRuler.foreground": "accent/39",
+        "editorWidget.background": "background-neutral",
         "focusBorder": "accent/b9",
         "foreground": "foreground",
         "gitDecoration.addedResourceForeground": "cyan/b9",

@@ -33,7 +33,7 @@ def register(name: str) -> int:
         "uiTheme": ui_theme,
         "path": theme_path
     })
-    json.dump(package_json, (ROOT_PATH / "package.json").open("w"))
+    json.dump(package_json, (ROOT_PATH / "package.json").open("w"), indent=4)
     return 0
 
 
@@ -42,5 +42,5 @@ def remove(name: str) -> int:
     index = find_theme(name, package_json["contributes"]["themes"])
     if index >= 0:
         package_json["contributes"]["themes"].pop(index)
-        json.dump(package_json, (ROOT_PATH / "package.json").open("w"))
+        json.dump(package_json, (ROOT_PATH / "package.json").open("w"), indent=4)
     return 0

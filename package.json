@@ -1,1 +1,60 @@
-{"name": "liver", "displayName": "Liver Theme", "description": "A theme which uses colours almost exclusively between lilac and vermillion.", "version": "0.4.3", "license": "MIT", "author": {"name": "RenoirTan"}, "publisher": "renoirtan", "engines": {"vscode": "^1.56.0"}, "repository": {"type": "git", "url": "https://github.com/RenoirTan/liver"}, "bugs": {"url": "https://github.com/RenoirTan/liver/issues"}, "categories": ["Themes"], "keywords": ["dark", "purple", "red", "violet", "liver", "theme", "themes", "vermillion", "lilac", "lavender"], "contributes": {"themes": [{"label": "Liver Dark", "uiTheme": "vs-dark", "path": "./themes/liver-dark.json"}, {"label": "Liver Dark Full", "uiTheme": "vs-dark", "path": "./themes/liver-dark-full.json"}, {"label": "Liver Purple", "uiTheme": "vs-dark", "path": "./themes/liver-purple.json"}, {"label": "Liver Purple Full", "uiTheme": "vs-dark", "path": "./themes/liver-purple-full.json"}]}}
+{
+    "name": "liver",
+    "displayName": "Liver Theme",
+    "description": "A theme which uses colours almost exclusively between lilac and vermillion.",
+    "version": "0.4.4",
+    "license": "MIT",
+    "author": {
+        "name": "RenoirTan"
+    },
+    "publisher": "renoirtan",
+    "engines": {
+        "vscode": "^1.56.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RenoirTan/liver"
+    },
+    "bugs": {
+        "url": "https://github.com/RenoirTan/liver/issues"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "keywords": [
+        "dark",
+        "purple",
+        "red",
+        "violet",
+        "liver",
+        "theme",
+        "themes",
+        "vermillion",
+        "lilac",
+        "lavender"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Liver Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/liver-dark.json"
+            },
+            {
+                "label": "Liver Dark Full",
+                "uiTheme": "vs-dark",
+                "path": "./themes/liver-dark-full.json"
+            },
+            {
+                "label": "Liver Purple",
+                "uiTheme": "vs-dark",
+                "path": "./themes/liver-purple.json"
+            },
+            {
+                "label": "Liver Purple Full",
+                "uiTheme": "vs-dark",
+                "path": "./themes/liver-purple-full.json"
+            }
+        ]
+    }
+}
