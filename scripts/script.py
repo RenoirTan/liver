@@ -22,7 +22,8 @@ def generate(*names: str) -> int:
         output = generator.generate_theme(template)
         json.dump(
             output,
-            Path(generator.THEMES_PATH / (name + ".json")).open("w")
+            Path(generator.THEMES_PATH / (name + ".json")).open("w"),
+            indent=4
         )
         print(" ✓")
     return 0

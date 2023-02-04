@@ -1,4 +1,8 @@
-# LiVer v0.4.3 Changelog
+# LiVer v0.4.4 Changelog
+
+## Version 0.4.4
+
+- Update scripts
 
 ## Version 0.4.3
 
