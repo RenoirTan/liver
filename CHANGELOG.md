@@ -1,4 +1,8 @@
-# LiVer v0.4.4 Changelog
+# LiVer v0.4.5 Changelog
+
+## Version 0.4.5
+
+Enable support for `semanticHighlighting` in the templates and python scripts for all themes.
 
 ## Version 0.4.4
 

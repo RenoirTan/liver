@@ -660,5 +660,6 @@
                 "foreground": "#ff6448"
             }
         }
-    ]
+    ],
+    "semanticHighlighting": true
 }
