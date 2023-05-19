@@ -40,5 +40,6 @@
             ],
             "settings": "medium-light-violet"
         }
-    ]
+    ],
+    "semanticHighlighting": true
 }

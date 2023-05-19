@@ -22,13 +22,20 @@ def get_template(name: str) -> Dict[str, str]:
     return json.load(path.open("r"))
 
 
-def get_theme_base(name: str = "", type: str = "") -> Dict[str, Any]:
-    return {
+def get_theme_base(
+    name: str = "",
+    type: str = "",
+    semantic_highlighting: Optional[bool] = None
+) -> Dict[str, Any]:
+    theme = {
         "name": name,
         "type": type,
         "colors": {},
         "tokenColors": []
     }
+    if semantic_highlighting is not None:
+        theme["semanticHighlighting"] = semantic_highlighting
+    return theme
 
 
 def resolve_colors(
@@ -138,7 +145,11 @@ def theme_inherit_from_parents(template: Dict[str, Any]) -> Dict[str, Any]:
 
 def generate_theme(template: Dict[str, Any]) -> Dict[str, Any]:
     template = theme_inherit_from_parents(template)
-    output = get_theme_base(template["name"], template["type"])
+    output = get_theme_base(
+        template["name"],
+        template["type"],
+        template.get("semanticHighlighting")
+    )
     palette = get_palette(template["generator"]["palette"])
     colors = resolve_colors(template["generator"]["colors"], palette)
     for scope, value in template["colors"].items():

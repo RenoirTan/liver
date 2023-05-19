@@ -674,5 +674,6 @@
                 "fontStyle": "underline"
             }
         }
-    ]
+    ],
+    "semanticHighlighting": true
 }

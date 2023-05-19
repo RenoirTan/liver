@@ -661,5 +661,6 @@
                 "foreground": "#915bb8"
             }
         }
-    ]
+    ],
+    "semanticHighlighting": true
 }
