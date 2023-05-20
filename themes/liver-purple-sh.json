@@ -138,6 +138,16 @@
     },
     "tokenColors": [
         {
+            "name": "Comment",
+            "scope": [
+                "comment",
+                "punctuation.definition.comment"
+            ],
+            "settings": {
+                "foreground": "#915bb8"
+            }
+        },
+        {
             "name": "Variables",
             "scope": [
                 "variable",
@@ -605,16 +615,6 @@
             ],
             "settings": {
                 "foreground": "#ff6448"
-            }
-        },
-        {
-            "name": "Comment",
-            "scope": [
-                "comment",
-                "punctuation.definition.comment"
-            ],
-            "settings": {
-                "foreground": "#915bb8"
             }
         }
     ],

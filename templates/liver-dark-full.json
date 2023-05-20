@@ -15,7 +15,7 @@
                 "comment",
                 "punctuation.definition.comment"
             ],
-            "settings": "centrist//i"
+            "settings": "comment//i"
         },
         {
             "name": "Constants",

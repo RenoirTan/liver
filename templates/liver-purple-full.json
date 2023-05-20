@@ -17,7 +17,7 @@
                 "comment",
                 "punctuation.definition.comment"
             ],
-            "settings": "medium-light-violet//i"
+            "settings": "comment//i"
         },
         {
             "name": "Constants",

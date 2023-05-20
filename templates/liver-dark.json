@@ -24,13 +24,22 @@
             "selection": "lilac",
             "selection-inactive": "background-neutral",
             "selection-textbox": "violet",
+            "comment": "centrist",
             "static": "vermillion",
             "keyword": "blue-violet",
+            "variable": "foreground",
+            "function": "violet",
             "string": "mint-green",
+            "escape-characters": "yellow",
+            "string-interpolation": "yellow",
             "literal": "lilac",
+            "types": "lilac",
+            "tag": "vermillion",
             "key": "foreground",
             "jsonkey": "french-fuchsia",
             "inikey": "french-fuchsia",
+            "iniheader": "blue-violet",
+            "attributes": "vermillion",
             "operator": "red",
             "punctuation": "foreground"
         }
@@ -176,7 +185,7 @@
                 "comment",
                 "punctuation.definition.comment"
             ],
-            "settings": "centrist"
+            "settings": "comment"
         },
         {
             "name": "Variables",
@@ -184,7 +193,7 @@
                 "variable",
                 "meta.function-call.arguments"
             ],
-            "settings": "foreground"
+            "settings": "variable"
         },
         {
             "name": "Builtin",
@@ -245,7 +254,7 @@
                 "punctuation.section.embedded",
                 "tag"
             ],
-            "settings": "vermillion"
+            "settings": "tag"
         },
         {
             "name": "Function, Method, Macro",
@@ -254,7 +263,7 @@
                 "meta.function",
                 "meta.function-call"
             ],
-            "settings": "violet"
+            "settings": "function"
         },
         {
             "name": "String",
@@ -271,7 +280,7 @@
                 "constant.character.escape",
                 "constant.other.placeholder"
             ],
-            "settings": "yellow"
+            "settings": "escape-characters"
         },
         {
             "name": "Format Sequence",
@@ -281,7 +290,7 @@
                 "punctuation.definition.interpolation",
                 "punctuation.section.embedded"
             ],
-            "settings": "yellow"
+            "settings": "string-interpolation"
         },
         {
             "name": "Literals",
@@ -309,7 +318,7 @@
                 "storage.modifier.lifetime",
                 "variable.other.enummember"
             ],
-            "settings": "lilac"
+            "settings": "types"
         },
         {
             "name": "Json Key",
@@ -331,7 +340,7 @@
             "scope": [
                 "entity.other.attribute-name"
             ],
-            "settings": "vermillion"
+            "settings": "attributes"
         },
         {
             "name": "Ini Table",
@@ -342,7 +351,7 @@
                 "source.toml entity.other.attribute-name",
                 "source.toml meta.tag"
             ],
-            "settings": "blue-violet"
+            "settings": "iniheader"
         },
         {
             "name": "Ini Key",

@@ -17,7 +17,8 @@
             "link": "violet",
             "selection": "dark-silver",
             "selection-inactive": "background-neutral",
-            "selection-textbox": "violet"
+            "selection-textbox": "violet",
+            "comment": "medium-light-violet"
         },
         "styles": {}
     },
@@ -31,15 +32,6 @@
         "tab.inactiveBackground": "very-dark-violet",
         "widget.shadow": "accent/1f"
     },
-    "tokenColors": [
-        {
-            "name": "Comment",
-            "scope": [
-                "comment",
-                "punctuation.definition.comment"
-            ],
-            "settings": "medium-light-violet"
-        }
-    ],
+    "tokenColors": [],
     "semanticHighlighting": false
 }
