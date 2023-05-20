@@ -37,5 +37,5 @@
             "settings": "link//u"
         }
     ],
-    "semanticHighlighting": true
+    "semanticHighlighting": false
 }

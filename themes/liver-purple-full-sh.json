@@ -1,5 +1,5 @@
 {
-    "name": "Liver Purple",
+    "name": "Liver Purple Full with Semantic Highlighting",
     "type": "dark",
     "colors": {
         "activityBar.background": "#49325b",
@@ -405,17 +405,6 @@
             }
         },
         {
-            "name": "URL",
-            "scope": [
-                "*url*",
-                "*link*",
-                "*uri*"
-            ],
-            "settings": {
-                "foreground": "#c390e8"
-            }
-        },
-        {
             "name": "Markdown Plain",
             "scope": [
                 "text.html.markdown",
@@ -658,9 +647,33 @@
                 "punctuation.definition.comment"
             ],
             "settings": {
-                "foreground": "#915bb8"
+                "foreground": "#915bb8",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "name": "Constant Variables",
+            "scope": [
+                "constant.other.caps.python",
+                "support.constant"
+            ],
+            "settings": {
+                "foreground": "#ff6448",
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "name": "URL",
+            "scope": [
+                "*url*",
+                "*link*",
+                "*uri*"
+            ],
+            "settings": {
+                "foreground": "#c390e8",
+                "fontStyle": "underline"
             }
         }
     ],
-    "semanticHighlighting": false
+    "semanticHighlighting": true
 }

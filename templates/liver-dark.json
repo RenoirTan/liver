@@ -597,5 +597,5 @@
             "settings": "vermillion"
         }
     ],
-    "semanticHighlighting": true
+    "semanticHighlighting": false
 }
