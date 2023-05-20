@@ -6,6 +6,8 @@ Rearrange, regroup and remove scopes so they're easier to work with.
 
 Yaml keys are now grouped under `Config Keys` instead of `Tags`, so they appear as `french-fuchsia` instead of `vermillion`. Made this change so that they look like JSON keys instead of XML tags.
 
+Use `commentjson` for the python scripts. Allows me to use comments in the template `.json`s.
+
 ## Version 0.4.6
 
 Add separate themes with/without `semanticHighlighting` while I work out the kinks.
