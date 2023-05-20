@@ -203,7 +203,7 @@
             "name": "Operator",
             "scope": [
                 "keyword.operator",
-                "punctuation.separator.statement.and"
+                "punctuation.separator.statement.and.shell"
             ],
             "settings": {
                 "foreground": "#ff1a1a"

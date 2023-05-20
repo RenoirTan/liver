@@ -181,8 +181,8 @@
         {
             "name": "Comment",
             "scope": [
-                "comment",
-                "punctuation.definition.comment"
+                "comment", // body of the comment
+                "punctuation.definition.comment" // delimiter, like `#` or `//`
             ],
             "settings": "comment"
         },
@@ -190,12 +190,12 @@
             "name": "Variables",
             "scope": [
                 "variable",
-                "meta.function-call.arguments"
+                "meta.function-call.arguments" // parameters and arguments
             ],
             "settings": "variable"
         },
         {
-            "name": "Builtin",
+            "name": "Builtin", // functions, classes and variables inherent to the language
             "scope": [
                 "variable.language",
                 "support.variable.magic",
@@ -224,7 +224,7 @@
             "name": "Keyword, Storage",
             "scope": [
                 "keyword",
-                "storage"
+                "storage" // modifiers like `public`, `struct, etc.
             ],
             "settings": "keyword"
         },
@@ -232,19 +232,21 @@
             "name": "Operator",
             "scope": [
                 "keyword.operator",
-                "punctuation.separator.statement.and"
+                // for some reason `&&` in shell doesn't count as an operator
+                // this is a workaround for that
+                "punctuation.separator.statement.and.shell"
             ],
             "settings": "operator"
         },
         {
             "name": "Punctuation",
             "scope": [
-                "punctuation"
+                "punctuation" // , .
             ],
             "settings": "punctuation"
         },
         {
-            "name": "Function, Method, Macro",
+            "name": "Function, Method, Macro", // Function definitions and calls
             "scope": [
                 "entity.name.function",
                 "meta.function",
@@ -255,14 +257,14 @@
         {
             "name": "String",
             "scope": [
-                "constant.character",
-                "punctuation.definition.string",
+                "constant.character", // character
+                "punctuation.definition.string", // ', ", ` etc
                 "string"
             ],
             "settings": "string"
         },
         {
-            "name": "Escape Character",
+            "name": "Escape Character", // \n \t etc
             "scope": [
                 "constant.character.escape",
                 "constant.other.placeholder"
@@ -270,7 +272,7 @@
             "settings": "escape-characters"
         },
         {
-            "name": "Format Sequence",
+            "name": "Format Sequence", // String interpolation, like the brackets in f-strings
             "scope": [
                 "constant.character.format.placeholder.other",
                 "punctuation.definition.template-expression",
@@ -303,12 +305,12 @@
                 "meta.class",
                 "meta.use",
                 "storage.modifier.lifetime",
-                "variable.other.enummember"
+                "variable.other.enummember" // Enums in rust need extra coaxing
             ],
             "settings": "types"
         },
         {
-            "name": "Tag",
+            "name": "Tag", // <tag> in XML and the like
             "scope": [
                 "entity.name.tag",
                 "meta.tag.sgml",
@@ -320,7 +322,7 @@
             "settings": "tag"
         },
         {
-            "name": "Config Key",
+            "name": "Config Key", // Keys in key value pairs
             "scope": [
                 "support.type.property-name.json",
                 "punctuation.support.type.property-name",
@@ -328,11 +330,13 @@
                 "source.toml entity.name.tag",
                 "source.ini keyword.other",
                 "text.html.markdown support.type.property-name.json",
-                "entity.name.tag.yaml"
+                "entity.name.tag.yaml" // Keys in yaml are considered tags, override needed
             ],
             "settings": "key"
         },
         {
+            // Like keys in "Config Key", but I thought there would be too much pink in CSS
+            // so i made it white.
             "name": "CSS Property",
             "scope": [
                 "support.type.property-name.css"
@@ -340,14 +344,14 @@
             "settings": "css-property"
         },
         {
-            "name": "Attributes",
+            "name": "Attributes", // <tag attribute="value">
             "scope": [
                 "entity.other.attribute-name"
             ],
             "settings": "attributes"
         },
         {
-            "name": "Ini Table",
+            "name": "Ini Table", // Headers in TOML and INI: [section]
             "scope": [
                 "source.ini entity.name",
                 "source.ini punctuation.definition",
@@ -357,6 +361,7 @@
             ],
             "settings": "iniheader"
         },
+        // A load of markdown/markup that I don't really care about anymore
         {
             "name": "Markup Inserted",
             "scope": [
