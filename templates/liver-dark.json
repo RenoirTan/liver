@@ -24,6 +24,7 @@
             "selection": "lilac",
             "selection-inactive": "background-neutral",
             "selection-textbox": "violet",
+            "bracket": "foreground",
             "comment": "centrist",
             "static": "vermillion",
             "keyword": "blue-violet",
@@ -179,6 +180,21 @@
         "widget.shadow": "accent/59"
     },
     "tokenColors": [
+        {
+            "name": "Brackets",
+            "scope": [
+                "meta.brace",
+                "punctuation.definition.arguments.begin",
+                "punctuation.definition.arguments.end",
+                "punctuation.definition.entity.begin",
+                "punctuation.definition.entity.end",
+                "punctuation.definition.type.begin",
+                "punctuation.definition.type.end",
+                "punctuation.section.scope.begin",
+                "punctuation.section.scope.end"
+            ],
+            "settings": "bracket"
+        },
         {
             "name": "Comment",
             "scope": [

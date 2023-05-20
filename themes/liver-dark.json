@@ -137,6 +137,23 @@
     },
     "tokenColors": [
         {
+            "name": "Brackets",
+            "scope": [
+                "meta.brace",
+                "punctuation.definition.arguments.begin",
+                "punctuation.definition.arguments.end",
+                "punctuation.definition.entity.begin",
+                "punctuation.definition.entity.end",
+                "punctuation.definition.type.begin",
+                "punctuation.definition.type.end",
+                "punctuation.section.scope.begin",
+                "punctuation.section.scope.end"
+            ],
+            "settings": {
+                "foreground": "#d7d7d7"
+            }
+        },
+        {
             "name": "Comment",
             "scope": [
                 "comment",
