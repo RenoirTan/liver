@@ -1,4 +1,8 @@
-# LiVer v0.4.5 Changelog
+# LiVer v0.4.6 Changelog
+
+## Version 0.4.6
+
+Add separate themes with/without `semanticHighlighting` while I work out the kinks.
 
 ## Version 0.4.5
 

@@ -1,0 +1,15 @@
+{
+    "name": "Liver Dark with Semantic Highlighting",
+    "type": "dark",
+    "generator": {
+        "palette": "dark",
+        "parents": [
+            "liver-dark"
+        ],
+        "colors": {},
+        "styles": {}
+    },
+    "colors": {},
+    "tokenColors": [],
+    "semanticHighlighting": true
+}

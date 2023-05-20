@@ -674,5 +674,5 @@
             }
         }
     ],
-    "semanticHighlighting": true
+    "semanticHighlighting": false
 }

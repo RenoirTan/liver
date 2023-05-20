@@ -1,5 +1,5 @@
 {
-    "name": "Liver Purple",
+    "name": "Liver Purple with Semantic Highlighting",
     "type": "dark",
     "colors": {
         "activityBar.background": "#49325b",
@@ -662,5 +662,5 @@
             }
         }
     ],
-    "semanticHighlighting": false
+    "semanticHighlighting": true
 }

@@ -1,0 +1,15 @@
+{
+    "name": "Liver Purple Full with Semantic Highlighting",
+    "type": "dark",
+    "generator": {
+        "palette": "purple",
+        "parents": [
+            "liver-purple-full"
+        ],
+        "colors": {},
+        "styles": {}
+    },
+    "colors": {},
+    "tokenColors": [],
+    "semanticHighlighting": true
+}
