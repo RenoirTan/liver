@@ -171,7 +171,24 @@
             "name": "Keyword, Storage",
             "scope": [
                 "keyword",
+                "keyword.other",
+                "keyword.other.unit",
+                "keyword.operator.wordlike",
+                "keyword.operator.new",
+                "keyword.operator.delete",
+                "keyword.operator.expression",
+                "keyword.operator.noexcept",
                 "storage"
+            ],
+            "settings": {
+                "foreground": "#9554e8"
+            }
+        },
+        {
+            "name": "Logical Operator",
+            "scope": [
+                "keyword.operator.logical",
+                "punctuation.separator.statement.and.shell"
             ],
             "settings": {
                 "foreground": "#9554e8"
@@ -180,8 +197,7 @@
         {
             "name": "Operator",
             "scope": [
-                "keyword.operator",
-                "punctuation.separator.statement.and.shell"
+                "keyword.operator"
             ],
             "settings": {
                 "foreground": "#ff1a1a"

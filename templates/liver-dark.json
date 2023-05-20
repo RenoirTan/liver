@@ -39,6 +39,7 @@
             "css-property": "foreground",
             "iniheader": "blue-violet",
             "attributes": "vermillion",
+            "logical": "blue-violet",
             "operator": "red",
             "punctuation": "foreground"
         }
@@ -224,17 +225,31 @@
             "name": "Keyword, Storage",
             "scope": [
                 "keyword",
+                "keyword.other",
+                "keyword.other.unit",
+                "keyword.operator.wordlike",
+                "keyword.operator.new",
+                "keyword.operator.delete",
+                "keyword.operator.expression",
+                "keyword.operator.noexcept",
                 "storage" // modifiers like `public`, `struct, etc.
             ],
             "settings": "keyword"
         },
         {
-            "name": "Operator",
+            "name": "Logical Operator", // and, or, in in Python, && || ! everywhere else
             "scope": [
-                "keyword.operator",
-                // for some reason `&&` in shell doesn't count as an operator
+                "keyword.operator.logical",
+                // for some reason `&&` in shell doesn't count as an logical operator
                 // this is a workaround for that
                 "punctuation.separator.statement.and.shell"
+            ],
+            "settings": "logical"
+        },
+        {
+            "name": "Operator",
+            "scope": [
+                "keyword.operator"
             ],
             "settings": "operator"
         },
