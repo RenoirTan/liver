@@ -198,20 +198,6 @@
             }
         },
         {
-            "name": "Tag",
-            "scope": [
-                "entity.name.tag",
-                "meta.tag.sgml",
-                "markup.deleted.git_gutter",
-                "punctuation.definition.tag",
-                "punctuation.section.embedded",
-                "tag"
-            ],
-            "settings": {
-                "foreground": "#ff6448"
-            }
-        },
-        {
             "name": "Function, Method, Macro",
             "scope": [
                 "entity.name.function",
@@ -288,19 +274,38 @@
             }
         },
         {
-            "name": "Json Key",
+            "name": "Tag",
+            "scope": [
+                "entity.name.tag",
+                "meta.tag.sgml",
+                "markup.deleted.git_gutter",
+                "punctuation.definition.tag",
+                "punctuation.section.embedded",
+                "tag"
+            ],
+            "settings": {
+                "foreground": "#ff6448"
+            }
+        },
+        {
+            "name": "Config Key",
             "scope": [
                 "support.type.property-name.json",
-                "punctuation.support.type.property-name"
+                "punctuation.support.type.property-name",
+                "support.type.property-name",
+                "source.toml entity.name.tag",
+                "source.ini keyword.other",
+                "text.html.markdown support.type.property-name.json",
+                "entity.name.tag.yaml"
             ],
             "settings": {
                 "foreground": "#fd3f92"
             }
         },
         {
-            "name": "Config Key",
+            "name": "CSS Property",
             "scope": [
-                "support.type.property-name"
+                "support.type.property-name.css"
             ],
             "settings": {
                 "foreground": "#d7d7d7"
@@ -312,7 +317,7 @@
                 "entity.other.attribute-name"
             ],
             "settings": {
-                "foreground": "#ff6448"
+                "foreground": "#fd3f92"
             }
         },
         {
@@ -326,17 +331,6 @@
             ],
             "settings": {
                 "foreground": "#9554e8"
-            }
-        },
-        {
-            "name": "Ini Key",
-            "scope": [
-                "source.toml entity.name.tag",
-                "source.ini keyword.other",
-                "text.html.markdown support.type.property-name.json"
-            ],
-            "settings": {
-                "foreground": "#fd3f92"
             }
         },
         {

@@ -35,9 +35,8 @@
             "literal": "lilac",
             "types": "lilac",
             "tag": "vermillion",
-            "key": "foreground",
-            "jsonkey": "french-fuchsia",
-            "inikey": "french-fuchsia",
+            "key": "french-fuchsia",
+            "css-property": "foreground",
             "iniheader": "blue-violet",
             "attributes": "vermillion",
             "operator": "red",
@@ -245,18 +244,6 @@
             "settings": "punctuation"
         },
         {
-            "name": "Tag",
-            "scope": [
-                "entity.name.tag",
-                "meta.tag.sgml",
-                "markup.deleted.git_gutter",
-                "punctuation.definition.tag",
-                "punctuation.section.embedded",
-                "tag"
-            ],
-            "settings": "tag"
-        },
-        {
             "name": "Function, Method, Macro",
             "scope": [
                 "entity.name.function",
@@ -321,19 +308,36 @@
             "settings": "types"
         },
         {
-            "name": "Json Key",
+            "name": "Tag",
             "scope": [
-                "support.type.property-name.json",
-                "punctuation.support.type.property-name"
+                "entity.name.tag",
+                "meta.tag.sgml",
+                "markup.deleted.git_gutter",
+                "punctuation.definition.tag",
+                "punctuation.section.embedded",
+                "tag"
             ],
-            "settings": "jsonkey"
+            "settings": "tag"
         },
         {
             "name": "Config Key",
             "scope": [
-                "support.type.property-name"
+                "support.type.property-name.json",
+                "punctuation.support.type.property-name",
+                "support.type.property-name",
+                "source.toml entity.name.tag",
+                "source.ini keyword.other",
+                "text.html.markdown support.type.property-name.json",
+                "entity.name.tag.yaml"
             ],
             "settings": "key"
+        },
+        {
+            "name": "CSS Property",
+            "scope": [
+                "support.type.property-name.css"
+            ],
+            "settings": "css-property"
         },
         {
             "name": "Attributes",
@@ -352,15 +356,6 @@
                 "source.toml meta.tag"
             ],
             "settings": "iniheader"
-        },
-        {
-            "name": "Ini Key",
-            "scope": [
-                "source.toml entity.name.tag",
-                "source.ini keyword.other",
-                "text.html.markdown support.type.property-name.json"
-            ],
-            "settings": "inikey"
         },
         {
             "name": "Markup Inserted",
