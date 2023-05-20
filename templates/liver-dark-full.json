@@ -18,9 +18,10 @@
             "settings": "centrist//i"
         },
         {
-            "name": "Constant Variables",
+            "name": "Constants",
             "scope": [
-                "constant.other.caps.python",
+                "constant",
+                "variable.other.constant",
                 "support.constant"
             ],
             "settings": "static//b"

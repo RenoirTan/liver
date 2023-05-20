@@ -182,58 +182,49 @@
             "name": "Variables",
             "scope": [
                 "variable",
-                "meta.block variable.other",
-                "support.variable.property.js",
-                "variable.parameter",
                 "meta.function-call.arguments"
             ],
             "settings": "foreground"
         },
         {
-            "name": "Builtin, Constant",
+            "name": "Builtin",
             "scope": [
-                "variable.other.constant",
                 "variable.language",
-                "constant.language",
                 "support.variable.magic",
                 "variable.legacy.builtin",
-                "constant.other.boolean",
-                "constant.other.caps.python",
-                "support.constant",
                 "variable.parameter.function.language.special"
+            ],
+            "settings": "static"
+        },
+        {
+            "name": "Constants",
+            "scope": [
+                "constant",
+                "variable.other.constant",
+                "support.constant"
             ],
             "settings": "static"
         },
         {
             "name": "Invalid",
             "scope": [
-                "invalid",
-                "invalid.illegal"
+                "invalid"
             ],
             "settings": "bad"
         },
         {
-            "name": "Keyword",
+            "name": "Keyword, Storage",
             "scope": [
                 "keyword",
-                "keyword.other",
-                "keyword.other.unit",
-                "keyword.operator.wordlike",
-                "keyword.operator.new",
-                "keyword.operator.delete",
-                "keyword.operator.expression",
-                "keyword.operator.logical",
-                "keyword.operator.noexcept",
-                "storage",
-                "storage.type",
-                "storage.modifier"
+                "storage"
             ],
             "settings": "keyword"
         },
         {
             "name": "Operator",
             "scope": [
-                "keyword.operator"
+                "keyword.operator",
+                "punctuation.separator.statement.and"
             ],
             "settings": "operator"
         },
@@ -260,13 +251,7 @@
             "name": "Function, Method, Macro",
             "scope": [
                 "entity.name.function",
-                "variable.function",
-                "support.function",
-                "keyword.other.special-method",
-                "entity.name.module.js",
-                "variable.import.parameter.js",
-                "variable.other.class.js",
-                "entity.name.method.js",
+                "meta.function",
                 "meta.function-call"
             ],
             "settings": "violet"
@@ -276,21 +261,25 @@
             "scope": [
                 "constant.character",
                 "punctuation.definition.string",
-                "string",
-                "string.regexp"
+                "string"
             ],
             "settings": "string"
         },
         {
-            "name": "Escape Character, Format Sequence",
+            "name": "Escape Character",
             "scope": [
                 "constant.character.escape",
-                "constant.other.placeholder",
+                "constant.other.placeholder"
+            ],
+            "settings": "yellow"
+        },
+        {
+            "name": "Format Sequence",
+            "scope": [
                 "constant.character.format.placeholder.other",
                 "punctuation.definition.template-expression",
-                "punctuation.section.embedded",
-                "source.rust punctuation.definition.interpolation",
-                "source.rust meta.interpolation"
+                "punctuation.definition.interpolation",
+                "punctuation.section.embedded"
             ],
             "settings": "yellow"
         },
@@ -306,40 +295,26 @@
             "settings": "literal"
         },
         {
-            "name": "Symbols, Markup Heading",
-            "scope": [
-                "constant.other.symbol",
-                "constant.other.key",
-                "markup.heading",
-                "markup.inserted.git_gutter",
-                "meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
-            ],
-            "settings": "mint-green"
-        },
-        {
-            "name": "Types, Class, Support, Import, Namespace",
+            "name": "Types, Class, Support, Import, Namespace, Lifetimes",
             "scope": [
                 "entity.name",
                 "entity.other.inherited-class",
-                "support.type",
-                "support.class",
-                "support.other.namespace.use.php",
-                "meta.use.php",
-                "support.other.namespace.php",
-                "markup.changed.git_gutter",
-                "meta.type meta.brace",
                 "storage.modifier.import",
                 "storage.type.generic",
                 "entity.name.namespace",
+                "entity.name.import",
                 "meta.package.java",
-                "storage.modifier.package.java"
+                "meta.class",
+                "meta.use",
+                "storage.modifier.lifetime",
+                "variable.other.enummember"
             ],
             "settings": "lilac"
         },
         {
             "name": "Json Key",
             "scope": [
-                "support.type.property-name",
+                "support.type.property-name.json",
                 "punctuation.support.type.property-name"
             ],
             "settings": "jsonkey"
@@ -347,12 +322,7 @@
         {
             "name": "Config Key",
             "scope": [
-                "source.css support.type.property-name",
-                "source.sass support.type.property-name",
-                "source.scss support.type.property-name",
-                "source.less support.type.property-name",
-                "source.stylus support.type.property-name",
-                "source.postcss support.type.property-name"
+                "support.type.property-name"
             ],
             "settings": "key"
         },
@@ -367,6 +337,7 @@
             "name": "Ini Table",
             "scope": [
                 "source.ini entity.name",
+                "source.ini punctuation.definition",
                 "source.toml punctuation.definition.table",
                 "source.toml entity.other.attribute-name",
                 "source.toml meta.tag"
@@ -478,25 +449,11 @@
             "settings": "foreground//ib"
         },
         {
-            "name": "Markup Underline",
-            "scope": [
-                "markup.underline"
-            ],
-            "settings": "foreground//u"
-        },
-        {
-            "name": "Markdown Blockquote",
-            "scope": [
-                "markup.quote punctuation.definition.blockquote.markdown"
-            ],
-            "settings": "neutral"
-        },
-        {
             "name": "Markup Quote",
             "scope": [
                 "markup.quote"
             ],
-            "settings": ""
+            "settings": "foreground"
         },
         {
             "name": "Markdown Link",
