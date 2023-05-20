@@ -150,6 +150,7 @@
             "name": "Variables",
             "scope": [
                 "variable",
+                "support.variable",
                 "meta.function-call.arguments"
             ],
             "settings": {
@@ -238,7 +239,8 @@
             "scope": [
                 "entity.name.function",
                 "meta.function",
-                "meta.function-call"
+                "meta.function-call",
+                "support.function"
             ],
             "settings": {
                 "foreground": "#c390e8"
@@ -303,7 +305,9 @@
                 "meta.class",
                 "meta.use",
                 "storage.modifier.lifetime",
-                "variable.other.enummember"
+                "variable.other.enummember",
+                "support.type",
+                "support.class"
             ],
             "settings": {
                 "foreground": "#eba2e8"
