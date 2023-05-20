@@ -8,6 +8,8 @@ Yaml keys are now grouped under `Config Keys` instead of `Tags`, so they appear 
 
 Use `commentjson` for the python scripts. Allows me to use comments in the template `.json`s.
 
+Probably some inconsistency with operators and brackets.
+
 ## Version 0.4.6
 
 Add separate themes with/without `semanticHighlighting` while I work out the kinks.
