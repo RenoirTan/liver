@@ -181,9 +181,12 @@
     },
     "tokenColors": [
         {
-            "name": "Brackets",
+            "name": "Brackets", // Not exhaustive in the least sheeeeeeesh
             "scope": [
                 "meta.brace",
+                "meta.parens",
+                "punctuation.bracket",
+                "punctuation.brackets",
                 "punctuation.definition.arguments.begin",
                 "punctuation.definition.arguments.end",
                 "punctuation.definition.entity.begin",
@@ -191,7 +194,48 @@
                 "punctuation.definition.type.begin",
                 "punctuation.definition.type.end",
                 "punctuation.section.scope.begin",
-                "punctuation.section.scope.end"
+                "punctuation.section.scope.end",
+                "punctuation.section.parens",
+                // Java
+                "punctuation.definition.parameters.begin.bracket",
+                "punctuation.definition.parameters.end.bracket",
+                "punctuation.section.class.begin.bracket",
+                "punctuation.section.class.end.bracket",
+                "punctuation.section.method.begin.bracket",
+                "punctuation.section.method.end.bracket",
+                // C, C++
+                "storage.modifier.array.bracket",
+                "punctuation.section.block.begin.bracket",
+                "punctuation.section.block.end.bracket",
+                "punctuation.definition.parameters.begin",
+                "punctuation.definition.parameters.end",
+                "punctuation.section.parameters.begin.bracket",
+                "punctuation.section.parameters.end.bracket",
+                "punctuation.definition.begin.bracket",
+                "punctuation.definition.end.bracket",
+                "punctuation.section.arguments.begin.bracket",
+                "punctuation.section.arguments.end.bracket",
+                "punctuation.section.angle-brackets",
+                // CSS
+                "punctuation.section.property-list.begin.bracket",
+                "punctuation.section.property-list.end.bracket",
+                // Go
+                "punctuation.definition.imports.begin.bracket",
+                "punctuation.definition.imports.end.bracket",
+                // JS
+                "punctuation.definition.block.js",
+                "punctuation.definition.dictionary.begin",
+                "punctuation.definition.dictionary.end",
+                "punctuation.definition.array.begin",
+                "punctuation.definition.array.end",
+                // Python
+                "punctuation.definition.list.begin",
+                "punctuation.definition.list.end",
+                "punctuation.definition.dict.begin",
+                "punctuation.definition.dict.end",
+                // Ruby
+                "punctuation.definition.parameters.ruby",
+                "punctuation.section.function.ruby"
             ],
             "settings": "bracket"
         },
