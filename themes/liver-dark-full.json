@@ -151,40 +151,7 @@
                 "punctuation.definition.type.end",
                 "punctuation.section.scope.begin",
                 "punctuation.section.scope.end",
-                "punctuation.section.parens",
-                "punctuation.definition.parameters.begin.bracket",
-                "punctuation.definition.parameters.end.bracket",
-                "punctuation.section.class.begin.bracket",
-                "punctuation.section.class.end.bracket",
-                "punctuation.section.method.begin.bracket",
-                "punctuation.section.method.end.bracket",
-                "storage.modifier.array.bracket",
-                "punctuation.section.block.begin.bracket",
-                "punctuation.section.block.end.bracket",
-                "punctuation.definition.parameters.begin",
-                "punctuation.definition.parameters.end",
-                "punctuation.section.parameters.begin.bracket",
-                "punctuation.section.parameters.end.bracket",
-                "punctuation.definition.begin.bracket",
-                "punctuation.definition.end.bracket",
-                "punctuation.section.arguments.begin.bracket",
-                "punctuation.section.arguments.end.bracket",
-                "punctuation.section.angle-brackets",
-                "punctuation.section.property-list.begin.bracket",
-                "punctuation.section.property-list.end.bracket",
-                "punctuation.definition.imports.begin.bracket",
-                "punctuation.definition.imports.end.bracket",
-                "punctuation.definition.block.js",
-                "punctuation.definition.dictionary.begin",
-                "punctuation.definition.dictionary.end",
-                "punctuation.definition.array.begin",
-                "punctuation.definition.array.end",
-                "punctuation.definition.list.begin",
-                "punctuation.definition.list.end",
-                "punctuation.definition.dict.begin",
-                "punctuation.definition.dict.end",
-                "punctuation.definition.parameters.ruby",
-                "punctuation.section.function.ruby"
+                "punctuation.section.parens"
             ],
             "settings": {
                 "foreground": "#d7d7d7"
@@ -340,7 +307,10 @@
                 "storage.modifier.lifetime",
                 "variable.other.enummember",
                 "support.type",
-                "support.class"
+                "support.class",
+                "meta.package",
+                "storage.modifier.package",
+                "storage.type.java"
             ],
             "settings": {
                 "foreground": "#eba2e8"
