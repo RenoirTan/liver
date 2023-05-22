@@ -14,6 +14,8 @@ Extra scopes under basically everything bruh.
 
 Stop "Markup Underline" from matching mutable variables in rust.
 
+`'` in rust lifetimes are now lilac too.
+
 ## Version 0.4.6
 
 Add separate themes with/without `semanticHighlighting` while I work out the kinks.

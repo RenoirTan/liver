@@ -386,6 +386,7 @@
                 "meta.class",
                 "meta.use",
                 "storage.modifier.lifetime",
+                "punctuation.definition.lifetime",
                 "variable.other.enummember", // Enums in rust need extra coaxing
                 "support.type",
                 "support.class",

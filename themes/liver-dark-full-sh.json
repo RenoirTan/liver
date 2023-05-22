@@ -309,6 +309,7 @@
                 "meta.class",
                 "meta.use",
                 "storage.modifier.lifetime",
+                "punctuation.definition.lifetime",
                 "variable.other.enummember",
                 "support.type",
                 "support.class",
