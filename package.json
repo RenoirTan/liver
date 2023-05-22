@@ -2,7 +2,7 @@
     "name": "liver",
     "displayName": "Liver Theme",
     "description": "A theme which uses colours almost exclusively between lilac and vermillion.",
-    "version": "0.4.6",
+    "version": "0.5.0",
     "license": "MIT",
     "author": {
         "name": "RenoirTan"
@@ -33,6 +33,7 @@
         "lilac",
         "lavender"
     ],
+    "icon": "icon/icon.png",
     "contributes": {
         "themes": [
             {
@@ -54,26 +55,6 @@
                 "label": "Liver Purple Full",
                 "uiTheme": "vs-dark",
                 "path": "./themes/liver-purple-full.json"
-            },
-            {
-                "label": "Liver Dark with Semantic Highlighting",
-                "uiTheme": "vs-dark",
-                "path": "./themes/liver-dark-sh.json"
-            },
-            {
-                "label": "Liver Dark Full with Semantic Highlighting",
-                "uiTheme": "vs-dark",
-                "path": "./themes/liver-dark-full-sh.json"
-            },
-            {
-                "label": "Liver Purple with Semantic Highlighting",
-                "uiTheme": "vs-dark",
-                "path": "./themes/liver-purple-sh.json"
-            },
-            {
-                "label": "Liver Purple Full with Semantic Highlighting",
-                "uiTheme": "vs-dark",
-                "path": "./themes/liver-purple-full-sh.json"
             }
         ]
     }

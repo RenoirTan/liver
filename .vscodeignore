@@ -1,0 +1,7 @@
+.vscode/
+palettes/
+scripts/
+templates/
+venv/
+icon/
+!icon/icon.png

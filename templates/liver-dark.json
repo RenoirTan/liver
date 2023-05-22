@@ -24,13 +24,23 @@
             "selection": "lilac",
             "selection-inactive": "background-neutral",
             "selection-textbox": "violet",
+            "bracket": "foreground",
+            "comment": "centrist",
             "static": "vermillion",
             "keyword": "blue-violet",
+            "variable": "foreground",
+            "function": "violet",
             "string": "mint-green",
+            "escape-characters": "yellow",
+            "string-interpolation": "yellow",
             "literal": "lilac",
-            "key": "foreground",
-            "jsonkey": "french-fuchsia",
-            "inikey": "french-fuchsia",
+            "types": "lilac",
+            "tag": "vermillion",
+            "key": "french-fuchsia",
+            "css-property": "foreground",
+            "iniheader": "blue-violet",
+            "attributes": "vermillion",
+            "logical": "blue-violet",
             "operator": "red",
             "punctuation": "foreground"
         }
@@ -171,64 +181,132 @@
     },
     "tokenColors": [
         {
+            "name": "Brackets", // Not exhaustive in the least sheeeeeeesh
+            "scope": [
+                "meta.brace",
+                "meta.parens",
+                "punctuation.bracket",
+                "punctuation.brackets",
+                "punctuation.definition.arguments.begin",
+                "punctuation.definition.arguments.end",
+                "punctuation.definition.entity.begin",
+                "punctuation.definition.entity.end",
+                "punctuation.definition.type.begin",
+                "punctuation.definition.type.end",
+                "punctuation.section.scope.begin",
+                "punctuation.section.scope.end",
+                "punctuation.section.parens"
+                // Java
+                // "punctuation.definition.parameters.begin.bracket",
+                // "punctuation.definition.parameters.end.bracket",
+                // "punctuation.section.class.begin.bracket",
+                // "punctuation.section.class.end.bracket",
+                // "punctuation.section.method.begin.bracket",
+                // "punctuation.section.method.end.bracket",
+                // // C, C++
+                // "storage.modifier.array.bracket",
+                // "punctuation.section.block.begin.bracket",
+                // "punctuation.section.block.end.bracket",
+                // "punctuation.definition.parameters.begin",
+                // "punctuation.definition.parameters.end",
+                // "punctuation.section.parameters.begin.bracket",
+                // "punctuation.section.parameters.end.bracket",
+                // "punctuation.definition.begin.bracket",
+                // "punctuation.definition.end.bracket",
+                // "punctuation.section.arguments.begin.bracket",
+                // "punctuation.section.arguments.end.bracket",
+                // "punctuation.section.angle-brackets",
+                // // CSS
+                // "punctuation.section.property-list.begin.bracket",
+                // "punctuation.section.property-list.end.bracket",
+                // // Go
+                // "punctuation.definition.imports.begin.bracket",
+                // "punctuation.definition.imports.end.bracket",
+                // // JS
+                // "punctuation.definition.block.js",
+                // "punctuation.definition.dictionary.begin",
+                // "punctuation.definition.dictionary.end",
+                // "punctuation.definition.array.begin",
+                // "punctuation.definition.array.end",
+                // // Python
+                // "punctuation.definition.list.begin",
+                // "punctuation.definition.list.end",
+                // "punctuation.definition.dict.begin",
+                // "punctuation.definition.dict.end",
+                // // Ruby
+                // "punctuation.definition.parameters.ruby",
+                // "punctuation.section.function.ruby"
+            ],
+            "settings": "bracket"
+        },
+        {
             "name": "Comment",
             "scope": [
-                "comment",
-                "punctuation.definition.comment"
+                "comment", // body of the comment
+                "punctuation.definition.comment" // delimiter, like `#` or `//`
             ],
-            "settings": "centrist"
+            "settings": "comment"
         },
         {
             "name": "Variables",
             "scope": [
                 "variable",
-                "meta.block variable.other",
-                "support.variable.property.js",
-                "variable.parameter",
-                "meta.function-call.arguments"
+                "support.variable",
+                "meta.function-call.arguments" // parameters and arguments
             ],
-            "settings": "foreground"
+            "settings": "variable"
         },
         {
-            "name": "Builtin, Constant",
+            "name": "Builtin", // functions, classes and variables inherent to the language
             "scope": [
-                "variable.other.constant",
                 "variable.language",
-                "constant.language",
                 "support.variable.magic",
                 "variable.legacy.builtin",
-                "constant.other.boolean",
-                "constant.other.caps.python",
-                "support.constant",
                 "variable.parameter.function.language.special"
+            ],
+            "settings": "static"
+        },
+        {
+            "name": "Constants",
+            "scope": [
+                "constant",
+                "variable.other.constant",
+                "support.constant"
             ],
             "settings": "static"
         },
         {
             "name": "Invalid",
             "scope": [
-                "invalid",
-                "invalid.illegal"
+                "invalid"
             ],
             "settings": "bad"
         },
         {
-            "name": "Keyword",
+            "name": "Keyword, Storage",
             "scope": [
                 "keyword",
                 "keyword.other",
                 "keyword.other.unit",
+                "keyword.operator.word",
                 "keyword.operator.wordlike",
                 "keyword.operator.new",
                 "keyword.operator.delete",
                 "keyword.operator.expression",
-                "keyword.operator.logical",
                 "keyword.operator.noexcept",
-                "storage",
-                "storage.type",
-                "storage.modifier"
+                "storage" // modifiers like `public`, `struct, etc.
             ],
             "settings": "keyword"
+        },
+        {
+            "name": "Logical Operator", // and, or, in in Python, && || ! everywhere else
+            "scope": [
+                "keyword.operator.logical",
+                // for some reason `&&` in shell doesn't count as an logical operator
+                // this is a workaround for that
+                "punctuation.separator.statement.and.shell"
+            ],
+            "settings": "logical"
         },
         {
             "name": "Operator",
@@ -240,59 +318,48 @@
         {
             "name": "Punctuation",
             "scope": [
-                "punctuation"
+                "punctuation" // , .
             ],
             "settings": "punctuation"
         },
         {
-            "name": "Tag",
-            "scope": [
-                "entity.name.tag",
-                "meta.tag.sgml",
-                "markup.deleted.git_gutter",
-                "punctuation.definition.tag",
-                "punctuation.section.embedded",
-                "tag"
-            ],
-            "settings": "vermillion"
-        },
-        {
-            "name": "Function, Method, Macro",
+            "name": "Function, Method, Macro", // Function definitions and calls
             "scope": [
                 "entity.name.function",
-                "variable.function",
-                "support.function",
-                "keyword.other.special-method",
-                "entity.name.module.js",
-                "variable.import.parameter.js",
-                "variable.other.class.js",
-                "entity.name.method.js",
-                "meta.function-call"
+                "meta.function",
+                "meta.function-call",
+                "support.function"
             ],
-            "settings": "violet"
+            "settings": "function"
         },
         {
             "name": "String",
             "scope": [
-                "constant.character",
-                "punctuation.definition.string",
+                "constant.character", // character
+                "punctuation.definition.string", // ', ", ` etc
+                "string.quoted.single",
+                "punctuation.definition.char", // single-quotes for rust
                 "string",
                 "string.regexp"
             ],
             "settings": "string"
         },
         {
-            "name": "Escape Character, Format Sequence",
+            "name": "Escape Character", // \n \t etc
             "scope": [
                 "constant.character.escape",
-                "constant.other.placeholder",
+                "constant.other.placeholder"
+            ],
+            "settings": "escape-characters"
+        },
+        {
+            "name": "Format Sequence", // String interpolation, like the brackets in f-strings
+            "scope": [
                 "constant.character.format.placeholder.other",
                 "punctuation.definition.template-expression",
-                "punctuation.section.embedded",
-                "source.rust punctuation.definition.interpolation",
-                "source.rust meta.interpolation"
+                "punctuation.definition.interpolation"
             ],
-            "settings": "yellow"
+            "settings": "string-interpolation"
         },
         {
             "name": "Literals",
@@ -306,82 +373,81 @@
             "settings": "literal"
         },
         {
-            "name": "Symbols, Markup Heading",
-            "scope": [
-                "constant.other.symbol",
-                "constant.other.key",
-                "markup.heading",
-                "markup.inserted.git_gutter",
-                "meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
-            ],
-            "settings": "mint-green"
-        },
-        {
-            "name": "Types, Class, Support, Import, Namespace",
+            "name": "Types, Class, Support, Import, Namespace, Lifetimes",
             "scope": [
                 "entity.name",
                 "entity.other.inherited-class",
-                "support.type",
-                "support.class",
-                "support.other.namespace.use.php",
-                "meta.use.php",
-                "support.other.namespace.php",
-                "markup.changed.git_gutter",
-                "meta.type meta.brace",
                 "storage.modifier.import",
                 "storage.type.generic",
                 "entity.name.namespace",
+                "entity.name.import",
                 "meta.package.java",
-                "storage.modifier.package.java"
+                "meta.class",
+                "meta.use",
+                "storage.modifier.lifetime",
+                "punctuation.definition.lifetime",
+                "variable.other.enummember", // Enums in rust need extra coaxing
+                "support.type",
+                "support.class",
+                "meta.package", // Java `package main;`
+                "storage.modifier.package",
+                "storage.type.java" // Java
             ],
-            "settings": "lilac"
+            "settings": "types"
         },
         {
-            "name": "Json Key",
+            "name": "Tag", // <tag> in XML and the like
             "scope": [
+                "entity.name.tag",
+                "meta.tag.sgml",
+                "markup.deleted.git_gutter",
+                "punctuation.definition.tag",
+                "punctuation.section.embedded",
+                "tag"
+            ],
+            "settings": "tag"
+        },
+        {
+            "name": "Config Key", // Keys in key value pairs
+            "scope": [
+                "support.type.property-name.json",
+                "punctuation.support.type.property-name",
                 "support.type.property-name",
-                "punctuation.support.type.property-name"
-            ],
-            "settings": "jsonkey"
-        },
-        {
-            "name": "Config Key",
-            "scope": [
-                "source.css support.type.property-name",
-                "source.sass support.type.property-name",
-                "source.scss support.type.property-name",
-                "source.less support.type.property-name",
-                "source.stylus support.type.property-name",
-                "source.postcss support.type.property-name"
+                "source.toml entity.name.tag",
+                "source.ini keyword.other",
+                "text.html.markdown support.type.property-name.json",
+                "entity.name.tag.yaml" // Keys in yaml are considered tags, override needed
             ],
             "settings": "key"
         },
         {
-            "name": "Attributes",
+            // Like keys in "Config Key", but I thought there would be too much pink in CSS
+            // so i made it white.
+            "name": "CSS Property",
+            "scope": [
+                "support.type.property-name.css"
+            ],
+            "settings": "css-property"
+        },
+        {
+            "name": "Attributes", // <tag attribute="value">
             "scope": [
                 "entity.other.attribute-name"
             ],
-            "settings": "vermillion"
+            "settings": "attributes"
         },
         {
-            "name": "Ini Table",
+            "name": "Ini Table", // Headers in TOML and INI: [section]
             "scope": [
                 "source.ini entity.name",
+                "source.ini punctuation.definition",
                 "source.toml punctuation.definition.table",
                 "source.toml entity.other.attribute-name",
                 "source.toml meta.tag"
             ],
-            "settings": "blue-violet"
+            "settings": "iniheader"
         },
-        {
-            "name": "Ini Key",
-            "scope": [
-                "source.toml entity.name.tag",
-                "source.ini keyword.other",
-                "text.html.markdown support.type.property-name.json"
-            ],
-            "settings": "inikey"
-        },
+        // A load of markdown/markup that I don't really care about anymore
         {
             "name": "Markup Inserted",
             "scope": [
@@ -437,6 +503,13 @@
             "settings": "lilac"
         },
         {
+            "name": "Markup Underline",
+            "scope": [
+                "!variable markup.underline"
+            ],
+            "settings": "foreground//u"
+        },
+        {
             "name": "Markup Italic",
             "scope": [
                 "markup.italic"
@@ -478,25 +551,11 @@
             "settings": "foreground//ib"
         },
         {
-            "name": "Markup Underline",
-            "scope": [
-                "markup.underline"
-            ],
-            "settings": "foreground//u"
-        },
-        {
-            "name": "Markdown Blockquote",
-            "scope": [
-                "markup.quote punctuation.definition.blockquote.markdown"
-            ],
-            "settings": "neutral"
-        },
-        {
             "name": "Markup Quote",
             "scope": [
                 "markup.quote"
             ],
-            "settings": ""
+            "settings": "foreground"
         },
         {
             "name": "Markdown Link",
@@ -597,5 +656,5 @@
             "settings": "vermillion"
         }
     ],
-    "semanticHighlighting": false
+    "semanticHighlighting": true
 }

@@ -17,12 +17,13 @@
                 "comment",
                 "punctuation.definition.comment"
             ],
-            "settings": "medium-light-violet//i"
+            "settings": "comment//i"
         },
         {
-            "name": "Constant Variables",
+            "name": "Constants",
             "scope": [
-                "constant.other.caps.python",
+                "constant",
+                "variable.other.constant",
                 "support.constant"
             ],
             "settings": "static//b"
@@ -37,5 +38,5 @@
             "settings": "link//u"
         }
     ],
-    "semanticHighlighting": false
+    "semanticHighlighting": true
 }

@@ -1,3 +1,4 @@
+import commentjson
 import json
 from pathlib import Path
 from typing import *
@@ -14,12 +15,12 @@ H = TypeVar("H", bound=Hashable)
 
 def get_palette(name: str) -> Dict[str, str]:
     path = PALETTES_PATH / f"{name}.json"
-    return json.load(path.open("r"))
+    return commentjson.load(path.open("r"))
 
 
 def get_template(name: str) -> Dict[str, str]:
     path = TEMPLATES_PATH / f"{name}.json"
-    return json.load(path.open("r"))
+    return commentjson.load(path.open("r"))
 
 
 def get_theme_base(

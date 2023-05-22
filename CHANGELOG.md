@@ -1,4 +1,24 @@
-# LiVer v0.4.6 Changelog
+# LiVer v0.5.0 Changelog
+
+## Version 0.5.0
+
+We have an icon now!
+
+Rearrange, regroup and remove scopes so they're easier to work with.
+
+Yaml keys are now grouped under `Config Keys` instead of `Tags`, so they appear as `french-fuchsia` instead of `vermillion`. Made this change so that they look like JSON keys instead of XML tags.
+
+Use `commentjson` for the python scripts. Allows me to use comments in the template `.json`s.
+
+Probably some inconsistency with operators and brackets but who cares.
+
+Extra scopes under basically everything bruh.
+
+Stop "Markup Underline" from matching mutable variables in rust.
+
+`'` in rust lifetimes are now lilac too.
+
+All themes have `semanticHighlighting` enabled since the user can toggle it on or off themselves.
 
 ## Version 0.4.6
 
