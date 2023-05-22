@@ -8,9 +8,7 @@ Yaml keys are now grouped under `Config Keys` instead of `Tags`, so they appear 
 
 Use `commentjson` for the python scripts. Allows me to use comments in the template `.json`s.
 
-Gigantic `Brackets` token scope.
-
-Probably some inconsistency with operators and brackets.
+Probably some inconsistency with operators and brackets but who cares.
 
 ## Version 0.4.6
 
