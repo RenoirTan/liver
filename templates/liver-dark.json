@@ -357,8 +357,7 @@
             "scope": [
                 "constant.character.format.placeholder.other",
                 "punctuation.definition.template-expression",
-                "punctuation.definition.interpolation",
-                "punctuation.section.embedded"
+                "punctuation.definition.interpolation"
             ],
             "settings": "string-interpolation"
         },
