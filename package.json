@@ -33,6 +33,7 @@
         "lilac",
         "lavender"
     ],
+    "icon": "icon/icon.png",
     "contributes": {
         "themes": [
             {
