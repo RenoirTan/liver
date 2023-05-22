@@ -337,9 +337,10 @@
             "scope": [
                 "constant.character", // character
                 "punctuation.definition.string", // ', ", ` etc
-                "punctuation.definition.regexp.begin",
-                "punctuation.definition.regexp.end",
-                "string"
+                "string.quoted.single",
+                "punctuation.definition.char", // single-quotes for rust
+                "string",
+                "string.regexp"
             ],
             "settings": "string"
         },

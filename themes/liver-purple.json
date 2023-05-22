@@ -274,9 +274,10 @@
             "scope": [
                 "constant.character",
                 "punctuation.definition.string",
-                "punctuation.definition.regexp.begin",
-                "punctuation.definition.regexp.end",
-                "string"
+                "string.quoted.single",
+                "punctuation.definition.char",
+                "string",
+                "string.regexp"
             ],
             "settings": {
                 "foreground": "#4fe399"
