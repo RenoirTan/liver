@@ -196,6 +196,7 @@
                 "keyword",
                 "keyword.other",
                 "keyword.other.unit",
+                "keyword.operator.word",
                 "keyword.operator.wordlike",
                 "keyword.operator.new",
                 "keyword.operator.delete",
@@ -252,6 +253,8 @@
             "scope": [
                 "constant.character",
                 "punctuation.definition.string",
+                "punctuation.definition.regexp.begin",
+                "punctuation.definition.regexp.end",
                 "string"
             ],
             "settings": {

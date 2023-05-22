@@ -10,6 +10,8 @@ Use `commentjson` for the python scripts. Allows me to use comments in the templ
 
 Probably some inconsistency with operators and brackets but who cares.
 
+Extra scopes under basically everything bruh.
+
 ## Version 0.4.6
 
 Add separate themes with/without `semanticHighlighting` while I work out the kinks.
