@@ -33,5 +33,5 @@
         "widget.shadow": "accent/1f"
     },
     "tokenColors": [],
-    "semanticHighlighting": false
+    "semanticHighlighting": true
 }

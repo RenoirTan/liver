@@ -16,6 +16,8 @@ Stop "Markup Underline" from matching mutable variables in rust.
 
 `'` in rust lifetimes are now lilac too.
 
+All themes have `semanticHighlighting` enabled since the user can toggle it on or off themselves.
+
 ## Version 0.4.6
 
 Add separate themes with/without `semanticHighlighting` while I work out the kinks.
