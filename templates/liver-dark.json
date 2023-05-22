@@ -502,6 +502,13 @@
             "settings": "lilac"
         },
         {
+            "name": "Markup Underline",
+            "scope": [
+                "!variable markup.underline"
+            ],
+            "settings": "foreground//u"
+        },
+        {
             "name": "Markup Italic",
             "scope": [
                 "markup.italic"

@@ -12,6 +12,8 @@ Probably some inconsistency with operators and brackets but who cares.
 
 Extra scopes under basically everything bruh.
 
+Stop "Markup Underline" from matching mutable variables in rust.
+
 ## Version 0.4.6
 
 Add separate themes with/without `semanticHighlighting` while I work out the kinks.

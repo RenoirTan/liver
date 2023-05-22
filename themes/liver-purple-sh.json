@@ -470,6 +470,16 @@
             }
         },
         {
+            "name": "Markup Underline",
+            "scope": [
+                "!variable markup.underline"
+            ],
+            "settings": {
+                "foreground": "#d7d7d7",
+                "fontStyle": "underline"
+            }
+        },
+        {
             "name": "Markup Italic",
             "scope": [
                 "markup.italic"
