@@ -1,5 +1,7 @@
+from liver_scripts.utils.graph import build_dependency_graph, get_dependency_list
 import copy
 from dataclasses import dataclass, field
+import networkx as nx
 from liver_scripts.models.base import BaseModel, BaseDependent
 from liver_scripts.models.palette import ResolvedPalette
 from liver_scripts.models.style import PartialStyle, ResolvedStyle, BaseStyle
@@ -65,3 +67,19 @@ class Component(BaseComponent, BaseDependent):
             kind=self.kind,
             styles=resolved_styles,
         )
+
+
+def inherit_components(components: dict[str, Component]) -> dict[str, Component]:
+    G = build_dependency_graph(list(components.values()))
+    cycles = nx.simple_cycles(G)
+    for _ in cycles:
+        raise ValueError(f"Dependency cycle detected in components: {cycles}")
+    sorted_components = get_dependency_list(G)
+    updated_components = dict[str, Component]()
+    for name in sorted_components:
+        component = components[name]
+        parents: dict[str, BaseComponent] = {
+            p: components[p] for p in component.parents
+        }
+        updated_components[name] = component.inherit(parents)
+    return updated_components

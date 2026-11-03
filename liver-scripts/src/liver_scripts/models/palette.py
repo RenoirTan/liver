@@ -1,5 +1,7 @@
+from liver_scripts.utils.graph import build_dependency_graph, get_dependency_list
 import copy
 from dataclasses import dataclass, field
+import networkx as nx
 from liver_scripts.models.base import BaseModel, BaseDependent
 from liver_scripts.models.color import validate_hex_color
 
@@ -76,3 +78,17 @@ class Palette(BasePalette, BaseDependent):
                 colors[name] = new_color
             loop_counter += 1
         return ResolvedPalette(self.name, colors)
+
+
+def inherit_palettes(palettes: dict[str, Palette]) -> dict[str, Palette]:
+    G = build_dependency_graph(list(palettes.values()))
+    cycles = nx.simple_cycles(G)
+    for _ in cycles:
+        raise ValueError(f"Dependency cycle detected in palettes: {cycles}")
+    sorted_palettes = get_dependency_list(G)
+    updated_palettes = dict[str, Palette]()
+    for name in sorted_palettes:
+        palette = palettes[name]
+        parents: dict[str, BasePalette] = {p: palettes[p] for p in palette.parents}
+        updated_palettes[name] = palette.inherit(parents)
+    return updated_palettes
