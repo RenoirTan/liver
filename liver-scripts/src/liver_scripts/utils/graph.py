@@ -16,5 +16,5 @@ def build_dependency_graph(nodes: list[N_co]) -> nx.Graph:
     return G
 
 
-def get_dependency_list(G: nx.Graph) -> list[BaseDependent]:
+def get_dependency_list(G: nx.Graph) -> list[str]:
     return list(reversed(list(nx.topological_sort(G))))

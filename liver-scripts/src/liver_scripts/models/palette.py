@@ -89,6 +89,8 @@ def inherit_palettes(palettes: dict[str, Palette]) -> dict[str, Palette]:
     updated_palettes = dict[str, Palette]()
     for name in sorted_palettes:
         palette = palettes[name]
-        parents: dict[str, BasePalette] = {p: palettes[p] for p in palette.parents}
+        parents: dict[str, BasePalette] = {
+            p: updated_palettes[p] for p in palette.parents
+        }
         updated_palettes[name] = palette.inherit(parents)
     return updated_palettes

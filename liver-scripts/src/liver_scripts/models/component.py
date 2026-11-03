@@ -79,7 +79,7 @@ def inherit_components(components: dict[str, Component]) -> dict[str, Component]
     for name in sorted_components:
         component = components[name]
         parents: dict[str, BaseComponent] = {
-            p: components[p] for p in component.parents
+            p: updated_components[p] for p in component.parents
         }
         updated_components[name] = component.inherit(parents)
     return updated_components
