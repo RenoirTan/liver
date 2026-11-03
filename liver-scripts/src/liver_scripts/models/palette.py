@@ -5,7 +5,31 @@ from liver_scripts.models.color import validate_hex_color
 
 
 @dataclass
-class Palette(BaseModel, BaseDependent):
+class BasePalette(BaseModel):
+    name: str
+    colors: dict[str, str] = field(default_factory=dict)
+
+    def __post_init__(self):
+        pass
+
+
+@dataclass
+class ResolvedPalette(BasePalette):
+    name: str
+    colors: dict[str, str] = field(default_factory=dict)
+
+    def __post_init__(self):
+        super().__post_init__()
+        for color in self.colors.values():
+            validate_hex_color(color)
+
+    @classmethod
+    def blank(cls):
+        return cls(name="", colors={})
+
+
+@dataclass
+class Palette(BasePalette, BaseDependent):
     """
     Represents a color palette.
     Keys of `colors` are the name of each color
@@ -29,7 +53,7 @@ class Palette(BaseModel, BaseDependent):
     def inherit(self, parents: list["Palette"]) -> "Palette":
         return copy.deepcopy(self).inherit_mutably(parents)
 
-    def resolve_mutably(self) -> "Palette":
+    def resolve(self) -> "ResolvedPalette":
         unresolved = set[str]()
         unresolved_iterator = filter(
             lambda kv: not validate_hex_color(kv[1], throw=False), self.colors.items()
@@ -38,18 +62,16 @@ class Palette(BaseModel, BaseDependent):
             unresolved.add(name)
             if color not in self.colors:
                 raise ValueError(f"{color} could not be resolved to a color")
+        colors = copy.deepcopy(self.colors)
         loop_counter = 0
         while len(unresolved) >= 1:
             if loop_counter > 100:
                 raise ValueError("Too many loops!")
             for name in set(unresolved):
-                color = self.colors[name]
-                new_color = self.colors[color]
+                color = colors[name]
+                new_color = colors[color]
                 if validate_hex_color(new_color, throw=False):
                     unresolved.remove(name)
-                self.colors[name] = new_color
+                colors[name] = new_color
             loop_counter += 1
-        return self
-
-    def resolve(self) -> "Palette":
-        return copy.deepcopy(self).resolve_mutably()
+        return ResolvedPalette(self.name, colors)

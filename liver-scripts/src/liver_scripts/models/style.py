@@ -1,9 +1,8 @@
 import copy
 from dataclasses import dataclass, field
-from typing import Optional
 from liver_scripts.models.base import BaseModel
 from liver_scripts.models.color import validate_hex_color
-from liver_scripts.models.palette import Palette
+from liver_scripts.models.palette import Palette, BasePalette
 from liver_scripts.models.text_style import TextStyle
 
 
@@ -21,13 +20,13 @@ class Style(BaseModel):
     def __post_init__(self):
         pass
 
-    def resolve_color(self, palette: Palette) -> Optional[str]:
+    def resolve_color(self, palette: BasePalette) -> str | None:
         if validate_hex_color(self.color, throw=False):
             return self.color
         else:
             return palette.colors.get(self.color)
 
-    def resolve(self, palette: Optional[Palette] = None) -> "ResolvedStyle":
+    def resolve(self, palette: BasePalette | None = None) -> "ResolvedStyle":
         palette = palette or Palette.blank()
         resolved_color = self.resolve_color(palette)
         if resolved_color is None:
@@ -48,9 +47,9 @@ class ResolvedStyle(Style):
 
 @dataclass
 class PartialStyle(BaseModel):
-    color: Optional[str] = None
-    opacity: Optional[int] = None
-    text_style: Optional[TextStyle] = None
+    color: str | None = None
+    opacity: int | None = None
+    text_style: TextStyle | None = None
 
     def __post_init__(self):
         if self.opacity is not None:

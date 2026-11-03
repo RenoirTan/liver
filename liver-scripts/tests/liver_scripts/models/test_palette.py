@@ -11,7 +11,7 @@ def test_simple_palette():
             "green": "#0f0",
             "blue": "#00f",
         },
-    ).resolve_mutably()
+    ).resolve()
     assert len(palette.colors) == 3
     assert palette.colors["red"] == "#f00"
     assert palette.colors["green"] == "#0f0"
@@ -29,8 +29,8 @@ def test_shallow_palette():
             "bad": "red",
             "maybe": "yellow",
             "good": "green",
-        }
-    ).resolve_mutably()
+        },
+    ).resolve()
     assert len(palette.colors) == 6
     assert palette.colors["red"] == palette.colors["bad"] == "#ff0000"
     assert palette.colors["yellow"] == palette.colors["maybe"] == "#ffff00"
@@ -51,8 +51,8 @@ def test_deep_palette():
             "deleted_file": "bad",
             "modified_file": "maybe",
             "new_file": "good",
-        }
-    ).resolve_mutably()
+        },
+    ).resolve()
     assert len(palette.colors) == 9
     assert (
         palette.colors["red"]
@@ -84,7 +84,7 @@ def test_unresolvable_palette():
         },
     )
     with pytest.raises(ValueError):
-        palette.resolve_mutably()
+        palette.resolve()
 
 
 def test_cyclic_palette():
@@ -94,10 +94,10 @@ def test_cyclic_palette():
         colors={
             "a": "b",
             "b": "a",
-        }
+        },
     )
     with pytest.raises(ValueError):
-        palette.resolve_mutably()
+        palette.resolve()
 
 
 def test_palette_inheritance():
@@ -107,7 +107,7 @@ def test_palette_inheritance():
         colors={
             "red": "#f00",
             "bad": "red",
-        }
+        },
     )
     b = Palette(
         name="b",
@@ -115,7 +115,7 @@ def test_palette_inheritance():
         colors={
             "green": "#0f0",
             "good": "green",
-        }
+        },
     )
     c = Palette(
         name="c",
@@ -123,19 +123,19 @@ def test_palette_inheritance():
         colors={
             "tomato": "red",
             "gravy": "good",
-        }
+        },
     )
     d = Palette(
         name="d",
         parents=["c"],
         colors={
             "blood": "bad",
-        }
+        },
     )
     c.inherit_mutably([a, b])
     d.inherit_mutably([c])
-    a.resolve_mutably()
-    b.resolve_mutably()
-    c.resolve_mutably()
-    d.resolve_mutably()
+    a = a.resolve()
+    b = b.resolve()
+    c = c.resolve()
+    d = d.resolve()
     assert c.colors["tomato"] == d.colors["blood"] == "#f00"

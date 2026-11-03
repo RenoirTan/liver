@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 import networkx as nx
 from liver_scripts.models.base import BaseModel, BaseDependent
 from liver_scripts.models.component import Component, ResolvedComponent
-from liver_scripts.models.palette import Palette
+from liver_scripts.models.palette import Palette, ResolvedPalette
 from liver_scripts.utils.graph import build_dependency_graph, get_dependency_list
 
 
@@ -15,7 +15,7 @@ class ResolvedTemplate(BaseModel, BaseDependent):
 
     name: str
     parents: list[str] = field(default_factory=list)
-    palettes: dict[str, Palette] = field(default_factory=dict)
+    palettes: dict[str, ResolvedPalette] = field(default_factory=dict)
     components: dict[str, ResolvedComponent] = field(default_factory=dict)
     palette_roles: dict[str, str] = field(default_factory=dict)
     component_roles: dict[str, str] = field(default_factory=dict)
@@ -52,8 +52,8 @@ class Template(BaseModel, BaseDependent):
         parent_palettes = list[Palette]()
         parent_components = list[Component]()
         for parent in parents:
-            parent_palettes.extend(parent.palettes)
-            parent_components.extend(parent.components)
+            parent_palettes.extend(parent.palettes.values())
+            parent_components.extend(parent.components.values())
         self._inherit_palettes_mutably(parent_palettes)
         self._inherit_components_mutably(parent_components)
         return self
@@ -61,7 +61,7 @@ class Template(BaseModel, BaseDependent):
     def inherit(self, parents: list["Template"]) -> "Template":
         return copy.deepcopy(self).inherit_mutably(parents)
 
-    def _resolve_palettes_mutably(self):
+    def _resolve_palettes_mutably(self) -> dict[str, ResolvedPalette]:
         G = build_dependency_graph(list(self.palettes.values()))
         cycles = nx.simple_cycles(G)
         if len(cycles) >= 1:
@@ -87,7 +87,7 @@ class Template(BaseModel, BaseDependent):
         for name, component in self.components.items():
             pass
 
-    def resolve_mutably(self) -> "Template":
+    def resolve_mutably(self) -> ResolvedTemplate:
         self._resolve_palettes_mutably()
         self._resolve_components_mutably()
         return self

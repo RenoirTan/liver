@@ -1,7 +1,7 @@
 import copy
 from dataclasses import dataclass, field
 from liver_scripts.models.base import BaseModel, BaseDependent
-from liver_scripts.models.palette import Palette
+from liver_scripts.models.palette import ResolvedPalette
 from liver_scripts.models.style import PartialStyle, ResolvedStyle
 
 
@@ -42,16 +42,16 @@ class Component(BaseModel, BaseDependent):
 
     def resolve_styles(
         self,
-        palette: Palette | None = None,
+        palette: ResolvedPalette | None = None,
     ) -> dict[str, ResolvedStyle]:
-        palette = palette or Palette.blank()
+        palette = palette or ResolvedPalette.blank()
         resolved_styles: dict[str, ResolvedStyle] = {
             name: value.to_full().resolve(palette)
             for name, value in self.styles.items()
         }
         return resolved_styles
 
-    def resolve(self, palette: Palette | None = None) -> ResolvedComponent:
+    def resolve(self, palette: ResolvedPalette | None = None) -> ResolvedComponent:
         resolved_styles = self.resolve_styles(palette)
         return self._RESOLVED_CLASS(
             name=self.name,
