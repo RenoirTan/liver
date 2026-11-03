@@ -30,9 +30,7 @@ class Component(BaseComponent, BaseDependent):
     kind: str = "default"
     parents: list[str] = field(default_factory=list)
     styles: dict[str, PartialStyle] = field(default_factory=dict)
-    _RESOLVED_CLASS: type[ResolvedComponent] = field(
-        init=False, default=ResolvedComponent
-    )
+    _RESOLVED_CLASS: type[ResolvedComponent] = field(default=ResolvedComponent)
 
     def inherit_mutably(self, parents: dict[str, BaseComponent]) -> "Component":
         for parent_name in self.parents:

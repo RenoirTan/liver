@@ -2,8 +2,8 @@ import copy
 from dataclasses import dataclass, field
 import networkx as nx
 from liver_scripts.models.base import BaseModel, BaseDependent
-from liver_scripts.models.component import Component, ResolvedComponent
-from liver_scripts.models.palette import Palette, ResolvedPalette
+from liver_scripts.models.component import Component, ResolvedComponent, BaseComponent
+from liver_scripts.models.palette import Palette, ResolvedPalette, BasePalette
 from liver_scripts.utils.graph import build_dependency_graph, get_dependency_list
 
 
@@ -37,10 +37,29 @@ class ResolvedTemplate(BaseTemplate):
 class Template(BaseTemplate, BaseDependent):
     name: str
     parents: list[str] = field(default_factory=list)
+    """
+    List of parent template names to copy from
+    """
     palettes: dict[str, Palette] = field(default_factory=dict)
+    """
+    Map of palettes to draw from.
+    This mapping grows when this template inherits from parent templates.
+    After inheritance, the resolution step will resolve all palettes
+    and select only those in palette_roles.
+    """
     components: dict[str, Component] = field(default_factory=dict)
+    """
+    Like in palettes but with components
+    """
     palette_roles: dict[str, str] = field(default_factory=dict)
+    """
+    Mapping of final palette names (required by backend)
+    to internal palette names (stored in datastruct)
+    """
     component_roles: dict[str, str] = field(default_factory=dict)
+    """
+    Like in palette_roles but with components
+    """
 
     @property
     def palette_names(self) -> list[str]:
@@ -73,33 +92,41 @@ class Template(BaseTemplate, BaseDependent):
     def inherit(self, parents: list["Template"]) -> "Template":
         return copy.deepcopy(self).inherit_mutably(parents)
 
-    def _resolve_palettes_mutably(self) -> dict[str, ResolvedPalette]:
+    def _resolve_palettes(self) -> dict[str, ResolvedPalette]:
         G = build_dependency_graph(list(self.palettes.values()))
         cycles = nx.simple_cycles(G)
-        if len(cycles) >= 1:
+        for _ in cycles:
             raise ValueError(f"Dependency cycle detected in palettes: {cycles}")
         sorted_palettes = get_dependency_list(G)
+        palettes = dict[str, Palette]()
         for name in sorted_palettes:
             palette = self.palettes[name]
-            parents = [self.palettes[p] for p in palette.parents]
-            palette.inherit_mutably(parents)
-        for palette in self.palettes.values():
-            palette.resolve_mutably()
+            parents: dict[str, BasePalette] = {
+                p: self.palettes[p] for p in palette.parents
+            }
+            palettes[name] = palette.inherit(parents)
+        return {n: p.resolve() for n, p in palettes.items()}
 
-    def _resolve_components_mutably(self):
+    def _resolve_components(self):
         G = build_dependency_graph(list(self.components.values()))
         cycles = nx.simple_cycles(G)
-        if len(cycles) >= 1:
+        for _ in cycles:
             raise ValueError(f"Dependency cycle detected in components: {cycles}")
         sorted_components = get_dependency_list(G)
+        components = dict[str, Component]()
         for name in sorted_components:
             component = self.components[name]
-            parents = [self.components[p] for p in component.parents]
-            component.inherit_mutably(parents)
-        for name, component in self.components.items():
-            pass
+            parents: dict[str, BaseComponent] = {
+                p: self.components[p] for p in component.parents
+            }
+            components[name] = component.inherit(parents)
+        return {n: c.resolve() for n, c in components.items()}
 
-    def resolve_mutably(self) -> ResolvedTemplate:
-        self._resolve_palettes_mutably()
-        self._resolve_components_mutably()
-        return self
+    def resolve(self) -> ResolvedTemplate:
+        return ResolvedTemplate(
+            name=self.name,
+            palettes=self._resolve_palettes(),
+            components=self._resolve_components(),
+            palette_roles=copy.deepcopy(self.palette_roles),
+            component_roles=copy.deepcopy(self.component_roles),
+        )

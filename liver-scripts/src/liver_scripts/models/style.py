@@ -57,6 +57,10 @@ class ResolvedStyle(Style):
         super().__post_init__()
         validate_hex_color(self.color)
 
+    @classmethod
+    def parse(cls, input: str) -> "ResolvedStyle":
+        return PartialStyle.parse(input).to_full().resolve()
+
 
 @dataclass
 class PartialStyle(BaseStyle):
