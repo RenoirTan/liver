@@ -132,8 +132,8 @@ def test_palette_inheritance():
             "blood": "bad",
         },
     )
-    c.inherit_mutably([a, b])
-    d.inherit_mutably([c])
+    c.inherit_mutably({"a": a, "b": b})
+    d.inherit_mutably({"c": c})
     a = a.resolve()
     b = b.resolve()
     c = c.resolve()

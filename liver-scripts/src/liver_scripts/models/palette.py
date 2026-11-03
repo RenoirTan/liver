@@ -44,13 +44,14 @@ class Palette(BasePalette, BaseDependent):
     def blank(cls):
         return cls(name="", parents=[], colors={})
 
-    def inherit_mutably(self, parents: list["Palette"]) -> "Palette":
-        for parent in parents:
+    def inherit_mutably(self, parents: dict[str, BasePalette]) -> "Palette":
+        for parent_name in self.parents:
+            parent = parents[parent_name]
             for name, new_color in parent.colors.items():
                 self.colors[name] = self.colors.get(name) or new_color
         return self
 
-    def inherit(self, parents: list["Palette"]) -> "Palette":
+    def inherit(self, parents: dict[str, BasePalette]) -> "Palette":
         return copy.deepcopy(self).inherit_mutably(parents)
 
     def resolve(self) -> "ResolvedPalette":

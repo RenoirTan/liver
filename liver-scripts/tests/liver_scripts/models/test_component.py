@@ -21,12 +21,13 @@ def test_shallow_component():
     )
     b = Component(
         name="b",
+        parents=["a"],
         styles={
             "windowAccent": PartialStyle.parse("red/7f"),
             "highlightedLine": PartialStyle.parse("#ffff00/33"),
         },
     )
-    b.inherit_mutably([a])
+    b.inherit_mutably({"a": a})
     b = b.resolve(
         palette=Palette(
             name="palette",

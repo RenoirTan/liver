@@ -7,7 +7,13 @@ from liver_scripts.models.text_style import TextStyle
 
 
 @dataclass
-class Style(BaseModel):
+class BaseStyle(BaseModel):
+    def to_partial(self) -> "PartialStyle":
+        raise NotImplementedError()
+
+
+@dataclass
+class Style(BaseStyle):
     """
     A combination of color, opacity and text_style that
     an element/text can have.
@@ -19,6 +25,13 @@ class Style(BaseModel):
 
     def __post_init__(self):
         pass
+
+    def to_partial(self) -> "PartialStyle":
+        return PartialStyle(
+            color=self.color,
+            opacity=self.opacity,
+            text_style=self.text_style,
+        )
 
     def resolve_color(self, palette: BasePalette) -> str | None:
         if validate_hex_color(self.color, throw=False):
@@ -46,7 +59,7 @@ class ResolvedStyle(Style):
 
 
 @dataclass
-class PartialStyle(BaseModel):
+class PartialStyle(BaseStyle):
     color: str | None = None
     opacity: int | None = None
     text_style: TextStyle | None = None
@@ -67,6 +80,9 @@ class PartialStyle(BaseModel):
             TextStyle.parse(raw_text_style) if raw_text_style is not None else None
         )
         return PartialStyle(color=color, opacity=opacity, text_style=text_style)
+
+    def to_partial(self) -> "PartialStyle":
+        return copy.deepcopy(self)
 
     def to_full(self) -> Style:
         if self.color is None:

@@ -8,13 +8,12 @@ from liver_scripts.utils.graph import build_dependency_graph, get_dependency_lis
 
 
 @dataclass
-class ResolvedTemplate(BaseModel, BaseDependent):
+class BaseTemplate(BaseModel):
     """
     A combination of color palette and component styles
     """
 
     name: str
-    parents: list[str] = field(default_factory=list)
     palettes: dict[str, ResolvedPalette] = field(default_factory=dict)
     components: dict[str, ResolvedComponent] = field(default_factory=dict)
     palette_roles: dict[str, str] = field(default_factory=dict)
@@ -22,7 +21,20 @@ class ResolvedTemplate(BaseModel, BaseDependent):
 
 
 @dataclass
-class Template(BaseModel, BaseDependent):
+class ResolvedTemplate(BaseTemplate):
+    """
+    A combination of color palette and component styles
+    """
+
+    name: str
+    palettes: dict[str, ResolvedPalette] = field(default_factory=dict)
+    components: dict[str, ResolvedComponent] = field(default_factory=dict)
+    palette_roles: dict[str, str] = field(default_factory=dict)
+    component_roles: dict[str, str] = field(default_factory=dict)
+
+
+@dataclass
+class Template(BaseTemplate, BaseDependent):
     name: str
     parents: list[str] = field(default_factory=list)
     palettes: dict[str, Palette] = field(default_factory=dict)
